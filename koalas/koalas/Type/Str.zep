@@ -21,14 +21,14 @@ class Str
         let this->cnt = cnt;
     }
 
-    public function q(mark=self::QS)
+    public function q(mark=self::QS) -> string
     {
         let this->cnt = mark . this->cnt . mark;
         return this;
     }
 
      
-    public function __toString()
+    public function __toString() -> string
     {
         return this->cnt;
     }
