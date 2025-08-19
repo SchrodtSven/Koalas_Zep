@@ -34,4 +34,5 @@ tmp/
 .DS_Store
 koalas/compile-errors.log
 koalas/compile.log
-vendor/
+vendor
+ide/
