@@ -27,7 +27,8 @@ ext/libtool
 
 # ZRE
 zephir.phar
-koalas/.zephir/
+.zephir/
 grube.*
 ext/
 tmp/
+.DS_Store

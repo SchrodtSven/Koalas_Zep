@@ -1,1 +1,0 @@
--I/opt/homebrew/Cellar/php/8.4.5/include/php -I/opt/homebrew/Cellar/php/8.4.5/include/php/main -I/opt/homebrew/Cellar/php/8.4.5/include/php/TSRM -I/opt/homebrew/Cellar/php/8.4.5/include/php/Zend -I/opt/homebrew/Cellar/php/8.4.5/include/php/ext -I/opt/homebrew/Cellar/php/8.4.5/include/php/ext/date/lib
