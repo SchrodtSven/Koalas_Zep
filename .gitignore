@@ -27,6 +27,7 @@ ext/libtool
 
 # ZRE
 zephir.phar
-.zephir/
+koalas/.zephir/
 grube.*
 ext/
+tmp/
