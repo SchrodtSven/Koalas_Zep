@@ -10,3 +10,27 @@ Stuff to be re-written:
 
 > [!IMPORTANT]  
 > Currently there is not much to see here 
+
+## File structure 
+```
+.
+├── doq
+│   ├── phpinfo.png
+│   └── Setup.md
+├── gitme.sh
+├── grube.txt
+├── info.php
+├── koalas
+│   ├── config.json
+│   └── koalas
+│       └── dataframe.zep
+├── LICENSE
+├── README.md
+├── src
+│   └── README.md
+├── test
+│   └── README.md
+└── test.php
+
+
+```
