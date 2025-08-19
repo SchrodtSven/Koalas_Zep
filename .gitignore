@@ -32,4 +32,5 @@ grube.*
 ext/
 tmp/
 .DS_Store
-
+koalas/compile-errors.log
+koalas/compile.log

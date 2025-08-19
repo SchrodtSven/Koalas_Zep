@@ -1,9 +1,5 @@
 {
-    "stubs": {
-        "path": "ide\/%version%\/%namespace%\/",
-        "stubs-run-after-generate": false,
-        "banner": ""
-    },
+   
     "api": {
         "path": "doc\/%version%",
         "theme": {
@@ -59,11 +55,25 @@
     },
     "namespace": "koalas",
     "name": "koalas",
-    "description": "",
+    "description": "Rewriting Re-writing (own) data managing stuff in Zephir",
     "author": "Sven Schrodt",
     "version": "0.0.1",
     "verbose": false,
+    "info": [
+        {
+            "rows": [
+                ["homepage", "https://schrodt.nrw"],
+                ["email", "sven@schrodt.nrw"],
+                ["github", "SchrodtSven"]
+            ]
+        }
+    ],
     "requires": {
         "extensions": []
+    },
+     "stubs": {
+        "path": "ide\/%version%\/%namespace%\/",
+        "stubs-run-after-generate": false,
+        "banner": ""
     }
 }

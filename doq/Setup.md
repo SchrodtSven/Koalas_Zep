@@ -16,7 +16,7 @@ sven@Thanos koalas % sudo cp koalas.so /opt/homebrew/lib/php/pecl/20240924/
 
 # php.ini (loaded) /opt/homebrew/etc/php/8.4/php.ini
 
-sven@Thanos koalas % sudo vi  /opt/homebrew/etc/php/8.4/php.ini
+sven@Thanos koalas % cl
 
 svenschrodt@Thanos doq % php -m              
 [PHP Modules]
