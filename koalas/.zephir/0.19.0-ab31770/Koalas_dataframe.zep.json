@@ -1,0 +1,54 @@
+[
+    {
+        "type": "namespace",
+        "name": "Koalas",
+        "file": "\/Users\/svenschrodt\/projects\/Koalas_Zep\/koalas\/Koalas\/dataframe.zep",
+        "line": 3,
+        "char": 5
+    },
+    {
+        "type": "class",
+        "name": "Dataframe",
+        "abstract": 0,
+        "final": 0,
+        "definition": {
+            "methods": [
+                {
+                    "visibility": [
+                        "public",
+                        "static"
+                    ],
+                    "type": "method",
+                    "name": "info",
+                    "statements": [
+                        {
+                            "type": "echo",
+                            "expressions": [
+                                {
+                                    "type": "string",
+                                    "value": "Meta data about ....\/ze   ",
+                                    "file": "\/Users\/svenschrodt\/projects\/Koalas_Zep\/koalas\/Koalas\/dataframe.zep",
+                                    "line": 8,
+                                    "char": 40
+                                }
+                            ],
+                            "file": "\/Users\/svenschrodt\/projects\/Koalas_Zep\/koalas\/Koalas\/dataframe.zep",
+                            "line": 9,
+                            "char": 5
+                        }
+                    ],
+                    "file": "\/Users\/svenschrodt\/projects\/Koalas_Zep\/koalas\/Koalas\/dataframe.zep",
+                    "line": 6,
+                    "last-line": 11,
+                    "char": 26
+                }
+            ],
+            "file": "\/Users\/svenschrodt\/projects\/Koalas_Zep\/koalas\/Koalas\/dataframe.zep",
+            "line": 3,
+            "char": 5
+        },
+        "file": "\/Users\/svenschrodt\/projects\/Koalas_Zep\/koalas\/Koalas\/dataframe.zep",
+        "line": 3,
+        "char": 5
+    }
+]

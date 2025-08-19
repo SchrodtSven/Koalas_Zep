@@ -24,3 +24,9 @@ ext/mkinstalldirs
 ext/run-tests.php
 ext/.deps
 ext/libtool
+
+# ZRE
+zephir.phar
+.zephir/
+grube.*
+ext/

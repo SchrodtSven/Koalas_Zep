@@ -1,0 +1,3 @@
+<?php
+
+Koalas\Dataframe::info();
