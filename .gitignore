@@ -37,3 +37,5 @@ koalas/compile.log
 vendor
 ide/
 .phpunit.cache/
+phpunit
+gitme.sh
