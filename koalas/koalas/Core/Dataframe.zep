@@ -1,5 +1,6 @@
 /**
- * Class representing a data structure called Dataframe - consting of 
+ * Class representing a data structure called Dataframe - consisting of 
+ *
  * - columns
  * - rows
  * 
@@ -11,7 +12,7 @@
  */
 namespace Koalas\Core;
 
-class Dataframe
+class Dataframe implements \Stringable
 {
     protected  errArrLength = "All arrays must be of the same length";
 
@@ -77,4 +78,8 @@ class Dataframe
         }
     }
 
+    public function __toString()
+    {
+        return "Dataframe";
+    }
 }
