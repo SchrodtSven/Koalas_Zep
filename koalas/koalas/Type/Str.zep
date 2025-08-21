@@ -21,10 +21,28 @@ class Str
         let this->cnt = cnt;
     }
 
-    public function q(mark=self::QS) -> string
+    public function q(mark=self::QS)
     {
-        let this->cnt = mark . this->cnt . mark;
+        this->app(mark)->prep(mark);
+
         return this;
+    }
+
+    public function app(string txt)
+    {
+        let this->cnt = this->cnt . txt;
+        return this;
+    }
+
+    public function prep(string txt)
+    {
+        let this->cnt = txt . this->cnt;
+        return this;
+    }
+
+    public function splitByWS() -> array
+    {
+        return preg_split("/\s+/", $this->cnt, -1, PREG_SPLIT_NO_EMPTY);
     }
 
      
