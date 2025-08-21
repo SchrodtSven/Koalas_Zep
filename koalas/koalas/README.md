@@ -15,7 +15,7 @@ We want:
   - tbh: also and more important: the [🐼, 🐼] way.
 
 > [!IMPORTANT]  
-> This is a <abbr title="Proof of concept">POC</abbr>, <abbr title="Work in progress">WIP</abbr>, <abbr title="Where to fly?">WTF</abbr> and only for myself with <u>no mile stones or deadline</u>.
+> This is a <abbr title="Proof of concept">POC</abbr>, <abbr title="Work in progress">WIP</abbr>, <abbr title="Where to fly?">WTF</abbr> and only for myself with <em>no mile stones or deadline</em>.
 
 
 
@@ -28,17 +28,18 @@ We want:
 
 ```php
 
-with($dataStructure)->(function($item) {
+with(dataStructure)->(function(item) {
   // process
 })
 
 
-// Queries in DataFrames:
-  $data->query("year == 2007")->query("continent == 'Europe'")
+// AND - ing queries in DataFrames:
+  let foo = df->query("year == 2007")
+       ->query("continent == 'Europe'")
+       ->getResult();
+
 ```
 
-> [!NOTE]  
-> This section will be updated 
 
 ## Subnamespaces 
 
