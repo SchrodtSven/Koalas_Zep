@@ -45,14 +45,14 @@ class Str
         return preg_split("/\s+/", this->cnt, -1, PREG_SPLIT_NO_EMPTY);
     }
 
-    public function splitBy(string separator) -> array
+    public function splitBy(string sep) -> array
     {
-        return explode(separator, this->cnt);
+        return explode(sep, this->cnt);
     }
 
-    public function replace(find, replace = "")
+    public function replace(fnd, rpl = "")
     {
-        let this->cnt = str_replace(find, replace, this->cnt);
+        let this->cnt = str_replace(fnd, rpl, this->cnt);
         return this;
     }
 
