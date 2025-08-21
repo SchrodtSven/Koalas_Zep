@@ -11,7 +11,7 @@ We want:
 - [ ] access operators for slicing; stepping like
   - `[2:]` (third element to end)
   - `[0::2]` (from start to end, stepped by 2)
-- [ ] filtering data with PHP 8.4+ the snaky way 🐍.
+- [ ] filtering data the snaky way 🐍.
   - tbh: also and more important: the [🐼, 🐼] way.
 
 > [!IMPORTANT]  
