@@ -3,14 +3,10 @@
 ## Conventions
 
 1. We use short hand variable names (```dta, col, fn, clj, flr```) for (data, column, filename, closure, filter) etc., but 'speaking' class names 
+2. ```Namespace``` will be <code>Koalas\\*</code>
 
-
-2. <s>Classes wrapping funtionality for native PHP data types will be named like <code>StringClass</code> as in <code>stdClass</code>, but <i>ucfirst</i>-style
-
-3. Global function names borrowed from the snake, but also existing in <kbd>PHP</kbd>, will be prefixed by <code>k</code> as in <code>kprint</code></s>
-
-
-4. ```Namespace``` will be <code>Koalas\\*</code>
+<s>Classes wrapping funtionality for native PHP data types will be named like <code>StringClass</code> as in <code>stdClass</code>, but <i>ucfirst</i>-style</s>
+<s>Global function names borrowed from the snake, but also existing in <kbd>PHP</kbd>, will be prefixed by <code>k</code> as in <code>kprint</code></s>
 
 ## Way to go, while developing 
 
