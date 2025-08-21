@@ -25,7 +25,7 @@ ext/run-tests.php
 ext/.deps
 ext/libtool
 
-# ZRE
+# ZRE && local stuff
 zephir.phar
 .zephir/
 grube.*
@@ -39,3 +39,5 @@ ide/
 .phpunit.cache/
 phpunit
 gitme.sh
+Setup_s3cr3t.md
+s3cre7.md

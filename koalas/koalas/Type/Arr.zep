@@ -21,8 +21,13 @@ class Arr
         let this->dta = dta;
     }
 
-    public function slice (int offset, int length = null, bool preserve_keys = false)
+    public function slice (int offset, int length = null, bool preserve_keys = false) -> array
     {
         return array_slice(this->dta, offset, length, preserve_keys);
+    }
+
+    public function raw() -> array
+    {
+        return this->dta;
     }
 }
