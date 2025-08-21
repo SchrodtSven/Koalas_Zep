@@ -6,9 +6,9 @@ Filtering arrays
 ```zephir
 use Koalas\Type\Op\Filter;
 
-$my = new Filter(json_decode(file_get_contents('mock_detail.json'), true));
+$filter = new Filter(json_decode(file_get_contents('mock_detail.json'), true));
 
-$my->withCrit('first_name')->starts('Ed');
-$filtered = $my->getDta();
+$filter->withCrit('first_name')->starts('Ed');
+$filtered = $filter->getDta();
 
 ```
