@@ -42,10 +42,40 @@ class Str
 
     public function splitByWS() -> array
     {
-        return preg_split("/\s+/", $this->cnt, -1, PREG_SPLIT_NO_EMPTY);
+        return preg_split("/\s+/", this->cnt, -1, PREG_SPLIT_NO_EMPTY);
     }
 
-     
+    public function splitBy(string separator) -> array
+    {
+        return explode(separator, this->cnt);
+    }
+
+    public function replace(find, replace = "")
+    {
+        let this->cnt = str_replace(find, replace, this->cnt);
+        return this;
+    }
+
+    /**
+     * Getting sub string enclosed by start and end 
+     * - start and end will be quoted for regex context
+     * 
+     * @param string start 
+     * @param string end 
+     * @return self
+     */
+    public function stringsBetween(string start, string end)
+    {
+        var start, end, pattern, txt;
+        let start = preg_quote(start);
+        let end = preg_quote(end);
+        let pattern = "/{start}(.*){end}/U"; // ungreedy modififer
+        preg_match_all(pattern, this->cnt, txt);
+        //@FIXME -> error detection
+        let this->cnt = txt[1][0];
+        return this;
+    }
+    
     public function __toString() -> string
     {
         return this->cnt;
