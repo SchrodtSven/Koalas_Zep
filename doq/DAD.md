@@ -15,15 +15,15 @@ During the main developing phase of this project, we will use magic interceptors
 
 ## Indexing, Slicing
 
-Ok, we can *not* access (<code>ArrayAccess</code> implementing types) the snaky way via12 
- - <code>$a[1:2]</code>
- - <code>$a[3:]</code>
- - <code>$a[:4]</code>
+Ok, we can *not* access (<kbd>ArrayAccess</kbd> implementing types) the snaky way via12 
+ - <code>a[1:2]</code>
+ - <code>a[3:]</code>
+ - <code>a[:4]</code>
 
- directly, - so we are making a little tradeoff here, by slicing this way (accessors as `string`; resulting in short handed <kbd>*::slice($start,end,step)</kbd>):
+ directly, - so we are making a little tradeoff here, by slicing this way (accessors as `string`; resulting in short handed <kbd>*::slice(start,end,step)</kbd>):
 
- - <code>$a['1:2']</code>
- - <code>$a['3:']</code>
- - <code>$a[':4']</code>
- - <code>$a['::2']</code>
+ - <code>a['1:2']</code>
+ - <code>a['3:']</code>
+ - <code>a[':4']</code>
+ - <code>a['::2']</code>
  
