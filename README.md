@@ -8,7 +8,7 @@ Stuff to be re-written:
 
 
 
-> [!IMPORTANT]  
+> [!NOTE]  
 > Currently there is not much to see here 
 
 > Zephir code can be found [here](https://github.com/SchrodtSven/Koalas_Zep/tree/main/koalas/koalas)
