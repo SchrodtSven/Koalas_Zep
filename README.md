@@ -23,7 +23,7 @@ Stuff to be re-written:
 ## Unit Testing 
 
 ```
-svenschrodt@Thanos Koalas_Zep % ./phpunit                              
+sven@Thanos Koalas_Zep % ./phpunit
 PHPUnit 12.3.4 by Sebastian Bergmann and contributors.
 
 Runtime:       PHP 8.4.5
@@ -52,7 +52,7 @@ Configuration: /Users/svenschrodt/projects/Koalas_Zep/phpunit.xml
 ............................................................. 1281 / 1292 ( 99%)
 ...........                                                   1292 / 1292 (100%)
 
-Time: 00:00.510, Memory: 33.81 MB
+Time: 00:00.507, Memory: 33.81 MB
 
-OK (1292 tests, 5087 assertions)
+OK (1292 tests, 4834 assertions)
 ```
