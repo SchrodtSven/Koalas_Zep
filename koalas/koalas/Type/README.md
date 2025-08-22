@@ -2,6 +2,9 @@
 
 PHP's native types as Objects     
 
+> [!IMPORTANT]  
+> Note to myself: add parameter and return type hints!
+
 # API
 
 ### Str
