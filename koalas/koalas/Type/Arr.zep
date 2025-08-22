@@ -11,7 +11,7 @@ namespace Koalas\Type;
 use Koalas\Type;
 
 
-class Arr
+class Arr implements \Countable
 {
     const ERR_404 = "File not found: %s";
 
@@ -46,7 +46,7 @@ class Arr
 
     public function map(clj) -> array
     {
-        return array_map(this->dta, clj);
+        return array_map(clj, this->dta);
     }
 
 
@@ -65,5 +65,10 @@ class Arr
             return new self(json_decode(file_get_contents(file), true));
         } 
 
+    }
+
+    public function count() -> int
+    {
+        return count(this->dta);
     }
 }

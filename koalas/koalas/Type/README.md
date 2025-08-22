@@ -35,11 +35,12 @@ PHP's native types as Objects
 
 ```zephir
     public function __construct(dta = []) {} //
-    public function slice (int offset, int length = null, bool preserve_keys = false) -> array{} //
-    public function rows (int offset, int length = null, bool preserve_keys = false) -> array{} //
-    public function cols(string col) -> array{} //
-    public function walk(clj) -> <Arr>{} //
-    public function map(clj) -> array{} //
-    public function raw() -> array{} //
-    public static function fromJson(string file) -> <Arr>{} //
+    public function slice (int offset, int length = null, bool preserve_keys = false) -> array {} //
+    public function rows (int offset, int length = null, bool preserve_keys = false) -> array {} //
+    public function cols(string col) -> array {} //
+    public function walk(clj) -> <Arr> {} //
+    public function map(clj) -> array {} //
+    public function raw() -> array {} //
+    public static function fromJson(string file) -> <Arr> {} //
 ```
+
