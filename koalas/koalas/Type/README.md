@@ -10,7 +10,7 @@ PHP's native types as Objects
     public function __construct(cnt = "") {} // Constructor
     public function q(mark=self::QS) {} // Quoting string
     public function app(string txt) {} // Appending string
-    public function prep(string txt) } // Prepending string
+    public function prep(string txt) {} // Prepending string
     public function splitByWS() -> array {} // split string on whitespace
     public function splitBy(string sep) -> array {} // Splitting by separator
     public function replace(fnd, rpl = '') {} // replacing 
@@ -34,7 +34,12 @@ PHP's native types as Objects
 ### Arr
 
 ```zephir
-    public function __construct(dta = [])
-    public function slice (int offset, int length = null, bool preserve_keys = false) -> array
-    public function raw() -> array
+    public function __construct(dta = []) {} //
+    public function slice (int offset, int length = null, bool preserve_keys = false) -> array{} //
+    public function rows (int offset, int length = null, bool preserve_keys = false) -> array{} //
+    public function cols(string col) -> array{} //
+    public function walk(clj) -> <Arr>{} //
+    public function map(clj) -> array{} //
+    public function raw() -> array{} //
+    public static function fromJson(string file) -> <Arr>{} //
 ```

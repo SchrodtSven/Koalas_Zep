@@ -11,8 +11,9 @@ class FilterTest extends TestCase
     protected Filter $filter;
  
     public function setUp(): void
-    {   $this->lst = json_decode(file_get_contents('mock_detail.json'), true);
-         $this->filter  = new Filter($this->lst);
+    {   
+        $this->lst = json_decode(file_get_contents('mock_detail.json'), true);
+        $this->filter  = new Filter($this->lst);
     }
 
     public function testFilterBasix(): void

@@ -6,7 +6,7 @@
 //$file = 'tmp/Filter.zep';
 
 
-$file = 'koalas/koalas/Core/Kql/Ast.zep';
+$file = 'koalas/koalas/Type/Arr.zep';
 
 $retval = zephir_parse_file(file_get_contents($file), $file);
 
