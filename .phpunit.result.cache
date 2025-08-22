@@ -1,1 +1,0 @@
-{"version":1,"defects":[],"times":{"Tests\\BasixTest::testFoo":0,"Tests\\FilterTest::testFilterBasix":0.002,"Tests\\FilterTest::testIfUniqWorxProperly":0.002,"Tests\\FilterTest::testIfBetweenWorxProperly":0.003,"Tests\\FilterTest::testIfContainsWorxProperly":0.007,"Tests\\FilterTest::testReset":0.002,"Tests\\FilterTest::testAggregates":0.002}}
