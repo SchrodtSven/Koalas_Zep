@@ -19,7 +19,7 @@ We want:
 
 
 
-### [DAD - Design& Architecture Dossier](doq/DAD.md)
+### [DAD - Design& Architecture Dossier](/doq/DAD.md)
 
 
 
