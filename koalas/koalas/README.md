@@ -27,13 +27,13 @@ We want:
 ### Ideas
 
 ```php
-
+// ContextManager like construxtz
 with(dataStructure)->(function(item) {
   // process
 })
 
 
-// AND - ing queries in DataFrames:
+// AND - ing queries in Dataframes:
   let foo = df->query("year == 2007")
        ->query("continent == 'Europe'")
        ->getResult();

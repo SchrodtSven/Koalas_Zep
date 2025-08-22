@@ -75,9 +75,121 @@ class Str
         let this->cnt = txt[1][0];
         return this;
     }
+
+    public function begins(string txt) -> bool
+    {
+        return str_starts_with(this->cnt, txt);
+    }
     
-    public function __toString() -> string
+    public function ends(string txt) -> bool
+    {
+        return str_ends_with(this->cnt, txt);
+    }
+
+    public function contains(string txt) -> bool
+    {
+        return str_contains(this->cnt, txt);
+    }
+
+    public function substr(int start, int length=null, string encoding = null)
+    {
+        return mb_substr(this->cnt, start, length, encoding);
+    }
+
+    public function substrCount(string needle, string encoding = null) -> int
+    {
+        return mb_substr_count(this->cnt, needle, encoding);
+        
+    }
+
+    public function __toString()
     {
         return this->cnt;
+    }
+
+    // Tranforming 
+
+    /* Splitting string at UpperCasedSubstrings
+     *
+     * @param string string
+     * @return ListClass
+     */
+    public function splitOnUpperCaseSubstring() -> array
+    {
+        return preg_split("/(?=[A-Z])/", this->cnt, - 1, PREG_SPLIT_NO_EMPTY);
+    }
+
+    /**
+     * Transforming string separated by sep into camelCasedString
+     * @FIXME 
+     * @param string text
+     * @param string sep
+     * @return self
+     */
+    public function camelize(string sep = "_", bool lf = true)
+    {
+        var tmp, first, itm;
+
+        let tmp = this->splitBy(sep);
+     
+        let first = (new Str(array_shift(tmp)))->lower();
+
+        for(itm in tmp) {
+            let itm = (new Str(itm))->lower()->upperFirst();
+        };
+     
+        return (lf) 
+                    ? first->app(join(tmp, ""))
+                    : first->app(join(tmp, ""))->upperFirst();
+    }
+     
+    /**
+     * Transforming camelCasedString to snake_cased_string
+     *
+     * @param string string
+     * @param boolean lc
+     * @return self
+     */
+    public function snakify(bool lc= true, string glue ="_")
+    {
+        return (join(this->splitOnUpperCaseSubstring(), glue)->lower());
+    }
+
+    /**
+     * Transforming first character to upper case
+     *
+     * @return self
+     */
+    public function upperFirst()
+    {
+        
+        let this->cnt = ucfirst(this->cnt);
+        return this;
+    }
+
+    /**
+     * Transforming first character to lower case 
+     *
+     * @return self
+     */
+    public function lowerFirst()
+    {
+        
+        let this->cnt = lcfirst(this->cnt);
+        return this;
+    }
+
+    public function upper()
+    {
+        
+        let this->cnt = strtoupper(this->cnt);
+        return this;
+    }
+
+    public function lower()
+    {
+        
+        let this->cnt = strtolower(this->cnt);
+        return this;
     }
 }
