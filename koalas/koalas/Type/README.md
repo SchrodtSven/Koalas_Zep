@@ -42,5 +42,6 @@ PHP's native types as Objects
     public function map(clj) -> array {} //
     public function raw() -> array {} //
     public static function fromJson(string file) -> <Arr> {} //
+    public function count() -> int {} //
 ```
 
