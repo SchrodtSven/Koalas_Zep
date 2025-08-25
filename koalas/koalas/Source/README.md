@@ -1,8 +1,11 @@
 # Koalas\Source
+<figure>
+<blockquote>“May the source be with you.”</blockquote>
+<figcaption>-- S.</figcaption>
+<figure>
 
-<blockquote>“May the source be with you. 
--- S.”</blockquote>
 Sub-namespace for <kbd>source code</kbd>  building functionality
+
 
 - Generic
 - Zephir
