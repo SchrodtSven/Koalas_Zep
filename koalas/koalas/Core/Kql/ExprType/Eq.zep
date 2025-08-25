@@ -18,7 +18,7 @@ class Eq extends Expr
    
     public function __construct(array operands = [])
     {
-        parent::__construct(self::OP_NM, self::OP, operands);
+        parent::__construct("EQ", "==", operands);
     }
 
    

@@ -13,12 +13,12 @@ use Koalas\Core\Kql\Expr;
 class Gt extends Expr
 {
     
-    const OP = '>';
-    const OP_NM = 'GT';
+    const OP = ">";
+    const OP_NM = "GT";
    
     public function __construct(array operands = [])
     {
-        parent::__construct(self::OP_NM, self::OP, operands);
+        parent::__construct("GT", ">", operands);
     }
 
    

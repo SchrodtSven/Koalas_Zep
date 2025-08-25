@@ -13,12 +13,12 @@ use Koalas\Core\Kql\Expr;
 class Ids extends Expr
 {
     
-    const OP = '===';
-    const OP_NM = 'IDS';
+    const OP = "===";
+    const OP_NM = "IDS";
    
     public function __construct(array operands = [])
     {
-        parent::__construct(self::OP_NM, self::OP, operands);
+        parent::__construct("IDS", "===", operands);
     }
 
    

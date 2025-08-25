@@ -13,12 +13,12 @@ use Koalas\Core\Kql\Expr;
 class Le extends Expr
 {
     
-    const OP = '<=';
-    const OP_NM = 'LE';
+    const OP = "<=";
+    const OP_NM = "LE";
    
     public function __construct(array operands = [])
     {
-        parent::__construct(self::OP_NM, self::OP, operands);
+        parent::__construct("LE", "<=", operands);
     }
 
    
