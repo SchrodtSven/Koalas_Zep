@@ -11,7 +11,7 @@ use Koalas\Type\Str;
 use PHPUnit\Framework\Attributes\TestWith;
 use PHPUnit\Framework\Attributes\DataProvider;
 
-class StrNextText extends TestCase
+class StrNextTest extends TestCase
 {
 
     // StringBoolTrait testing

@@ -6,7 +6,7 @@ PHP's native types as Objects
 > Note to myself: add parameter and return type hints!
 
 # API
-
+find . -type f -name "*.zep"  -exec wc -l
 ### Str
 
 ```zephir

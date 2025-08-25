@@ -40,7 +40,6 @@ class Tknrz
         array_shift(tmp);
 
         for(itm in tmp) {
-        // print(implode(' : ', get_object_vars(itm))) . PHP_EOL;
             let newItm = get_object_vars(itm);
             let newItm["name"] = itm->getTokenName();
             let this->tokens[] = newItm; 

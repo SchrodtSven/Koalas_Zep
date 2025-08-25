@@ -27,8 +27,6 @@ class Filter
    const EQ = "=="; // equals
    const NE = "!="; // not equals
 
-
-
    const GT = ">"; // greater than
    const LT = "<"; // less than
 
@@ -47,10 +45,6 @@ class Filter
    const ISIN = "IN"; //  in() 
    const NIN = "NIИ"; // not in() 
     
-
-
- 
-
     public function __construct(dta) 
     {
         // Cloning dta in origin @see Filter::reset()
@@ -207,7 +201,5 @@ class Filter
     {
         let this->dta = this->origin;
     }
-
-    
 
 }
