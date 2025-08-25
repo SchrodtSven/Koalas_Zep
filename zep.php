@@ -1,12 +1,12 @@
 <?php
 
 //$file = 'koalas/koalas/Source/Generic/Builder.zep';
-$file = 'koalas/koalas/Math/Mtx.zep';
-$retval = zephir_parse_file(file_get_contents($file), $file);
+// $file = 'koalas/koalas/Core/Kql/ExprType/Gt.zep';
+// $retval = zephir_parse_file(file_get_contents($file), $file);
 
-var_dump($retval);
+// var_dump($retval);
 
-    //exit();       
+// exit();
 
 $files = [
     'koalas/koalas/Type/Op/Filter.zep',
@@ -24,8 +24,20 @@ $files = [
     'koalas/koalas/Source/Generic/Assignment.zep',
     'koalas/koalas/Source/Generic/Grammar.zep',
     'koalas/koalas/Source/Generic/Builder.zep',
-    'koalas/koalas/Math/Mtx.zep',
+    //'koalas/koalas/Math/Mtx.zep',
+    'koalas/koalas/Core/Kql/Expr.zep',
+    
 
+];
+
+$files_two = [
+    'koalas/koalas/Core/Kql/ExprType/Gt.zep',
+    'koalas/koalas/Core/Kql/ExprType/Lt.zep',
+    'koalas/koalas/Core/Kql/ExprType/Ge.zep',
+    'koalas/koalas/Core/Kql/ExprType/Le.zep',
+    'koalas/koalas/Core/Kql/ExprType/Eq.zep',
+    'koalas/koalas/Core/Kql/ExprType/Ne.zep',
+    'koalas/koalas/Core/Kql/ExprType/Ids.zep'
 ];
 
 foreach ($files as $file) {
@@ -33,4 +45,3 @@ foreach ($files as $file) {
 
     var_dump($retval);
 }
- 
