@@ -11,5 +11,6 @@ namespace Koalas\Core\Kql;
 
 class Grammar
 {
+    public foo = 23;
 
 }

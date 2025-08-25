@@ -49,7 +49,10 @@ class Arr implements \Countable
         return array_map(clj, this->dta);
     }
 
-
+    public function join(string mark="'") -> string
+    {
+        return implode(mark, this->dta);
+    }
 
 
     public function raw() -> array

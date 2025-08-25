@@ -33,10 +33,8 @@ class Parser
         for (i in range(0, lstIdx))
         {
             let curr = this->tokenList[i];
-
         }
 
         return false;
     }
-
 }

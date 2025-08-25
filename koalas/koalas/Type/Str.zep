@@ -9,7 +9,7 @@
  */
 namespace Koalas\Type;
 use Koalas\Type;
-
+use  Koalas\Source\Generic\Grammar;
 
 class Str
 {
@@ -191,5 +191,32 @@ class Str
         
         let this->cnt = strtolower(this->cnt);
         return this;
+    }
+
+    public function matchEnd(string start) -> string
+    {
+        switch(start) {
+
+            case Grammar::CHEVRONS_START:
+                return Grammar::CHEVRONS_END;
+            
+            case Grammar::PARENTHESES_START:
+                return Grammar::PARENTHESES_END;
+
+            case Grammar::BRACES_START:
+                return Grammar::BRACES_END;
+
+            case Grammar::BRACKETS_START:
+                return Grammar::BRACKETS_END;
+
+            default:
+                return start;
+        }
+        return start;
+    }
+
+    public function enclose(string start) -> string
+    {
+        return (sprintf("%s%s%s", start, this->cnt, this->matchEnd(start)));
     }
 }

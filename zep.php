@@ -1,13 +1,36 @@
 <?php
-// $file = 'koalas/koalas/Type/Op/Filter.zep';
-// $file = 'koalas/koalas/Type/Str.zep';
-//$file = 'koalas/koalas/Core/Kql/Tknrz.zep';
-//$file = 'koalas/koalas/Core/Kql/Parser.zep';
-//$file = 'tmp/Filter.zep';
 
-
-$file = 'koalas/koalas/Type/Arr.zep';
-
+//$file = 'koalas/koalas/Source/Generic/Builder.zep';
+$file = 'koalas/koalas/Math/Mtx.zep';
 $retval = zephir_parse_file(file_get_contents($file), $file);
 
 var_dump($retval);
+
+    //exit();       
+
+$files = [
+    'koalas/koalas/Type/Op/Filter.zep',
+    'koalas/koalas/Core/Dataframe.zep',
+    'koalas/koalas/Core/Kql/Tokens.zep',
+    'koalas/koalas/Core/Kql/Parser.zep',
+    'koalas/koalas/Core/Kql/Ast.zep',
+    'koalas/koalas/Core/Kql/Tknrz.zep',
+    'koalas/koalas/Core/Kql/Parser.zep',
+    'koalas/koalas/Core/Kql/Grammar.zep',
+    'koalas/koalas/Type/Arr.zep',
+    'koalas/koalas/Type/Str.zep',
+    'koalas/koalas/Type/Arr.zep',
+    'koalas/koalas/Type/Op/Filter.zep',
+    'koalas/koalas/Source/Generic/Assignment.zep',
+    'koalas/koalas/Source/Generic/Grammar.zep',
+    'koalas/koalas/Source/Generic/Builder.zep',
+    'koalas/koalas/Math/Mtx.zep',
+
+];
+
+foreach ($files as $file) {
+    $retval = zephir_parse_file(file_get_contents($file), $file);
+
+    var_dump($retval);
+}
+ 
