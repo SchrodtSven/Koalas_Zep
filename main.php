@@ -1,20 +1,24 @@
 <?php
-use Koalas\Core\Kql\Entity\Num;
+use Koalas\Core\Kql\Parser;
+use Koalas\Core\Kql\Tknrz;
+$code = 'gr in (2, 45, 66) AND (fe>23)';
+$t = new Tknrz($code);
 
-$lst =  [
+$p = new Parser($t->filterWS()->getTokens());
+$op = "(";
+$cl = ")";
 
-            [2.33, 'float', 2.33],
-            [false, 'NULL', NULL],
-            [0x666, 'integer', 1638],
-            [22, 'integer', 22],
-            [null, 'integer', 0],
-            [0, 'integer', 0],
-            ['3.14', 'float', 3.14],
-            ["222", 'integer', 222]
-        ];
+$tok = $t->getTokens();
+$st = $p->findNext($op);
 
 
-for($i=0;$i<count($lst);$i++) {
-    $ins = new Num($lst[$i][0]);
-    var_dump ($ins);
-}
+
+$en = $p->lookAhead($cl, $st);
+$inPar = $p->slice($st, $en);
+print (implode('', array_column($inPar, "text")));
+$p->consume($en);
+
+var_dump($t->getTokens());
+
+
+

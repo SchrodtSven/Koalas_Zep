@@ -12,6 +12,8 @@ namespace Koalas\Core\Kql;
 class Parser
 {
 
+    const TXT_COL = "text";
+
     protected tokenList = [] {
         get, set
     };
@@ -20,7 +22,7 @@ class Parser
         get, set
     };
 
-    public function __construct(array $tokenList)
+    public function __construct(array tokenList)
     {
         let this->tokenList = tokenList;
     }
@@ -36,5 +38,46 @@ class Parser
         }
 
         return false;
+    }
+
+    public function lookAhead(string fnd, int strt) -> int
+    {
+        var lst, i, end;
+        let lst = array_column(this->tokenList, self::TXT_COL);
+        let end = count(this->tokenList);
+        let end --;        
+        //for (i = strt;i<count(this->tokenList);i++) 
+        for i in range(strt, end)
+        {
+            if(lst[i] == fnd) {
+                return i;
+            }
+                
+        }
+
+        return -1;
+    }
+
+    public function findNext(string needle, int strt = 0) -> int
+    {
+        return array_search(needle, array_column(this->tokenList, self::TXT_COL));
+    }
+
+    public function consume(int offs) -> <Parser>
+    {
+        let this->tokenList = this->tokenList->sclice(offs);
+        return this;
+    }
+
+    /**
+     * Slicing from token list /between/ st and en params   
+    */
+    public function slice(int strt, int end) -> array
+    {
+        var offs, leng;
+        let offs = strt +1;
+        let leng = end - strt;
+        let leng --;
+        return array_slice(this->tokenList, offs, leng);
     }
 }

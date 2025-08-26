@@ -21,9 +21,7 @@ class Tknrz
         get, set
     };
 
-    private tokens = [] {
-        get 
-    };
+    private tokens = [];
 
     public function __construct(string code)
     {
@@ -47,13 +45,18 @@ class Tknrz
         }
     }
 
-    public function filterWS()
+    public function filterWS() -> <Tknrz>
     {
         let this->tokens = array_filter(this->tokens, function(itm) {
             return (itm["id"] != T_WHITESPACE);
         });
 
         return this;
+    }
+
+    public function getTokens() -> array
+    {
+        return this->tokens;
     }
     
 

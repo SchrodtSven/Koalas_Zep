@@ -1,9 +1,10 @@
 <?php
 
 //$file = 'koalas/koalas/Source/Generic/Builder.zep';
-$file = 'koalas/koalas/Type/Op/Numberizr.zep';
+//$file = 'koalas/koalas/Type/Op/Numberizr.zep';
 //$file = 'koalas/koalas/Core/Kql/Entity/Num.zep';
-
+$file = 'koalas/koalas/Core/Kql/Parser.zep';
+//$file = 'koalas/koalas/Core/Kql/Tknrz.zep';
 $retval = zephir_parse_file(file_get_contents($file), $file);
 
 var_dump($retval);
