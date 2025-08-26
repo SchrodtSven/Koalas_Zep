@@ -6,28 +6,15 @@ use Koalas\Source\Generic\Assignment;
 use Koalas\Core\Kql\Tknrz;
 use Koalas\Type\Arr;
 
-$code = "country in ['DE', 'FR']";
-
-$code = "id > 1024";
-$code = 'country IN  ["DE", "FR"]';
-
+$code = 'country IN  ("DE", "FR")';
+$code = 'ISO-2 == "FR"';
 $tokenizr = new Tknrz($code);
 $tokens =  $tokenizr->filterWS() 
-        ->getTokens();
+                     ->getTokens();
 
 
-var_dump(
-       $tokens
-    );
+foreach( $tokens as $tkn) {
+   print ("{$tkn['name']}: {$tkn['text']}" . PHP_EOL);
+   
+}
 
-$myArr = new Arr(array_column($tokens, 'name'));
-
- function quoteListByMap(Arr $tokens): array 
- {
-    return $tokens->map(function($itm) {
-        return "'{$itm}'";
-    });
-    
- }   
-var_dump(quoteListByMap($myArr));
-//echo (implode(', ', quoteListByMap($myArr)));

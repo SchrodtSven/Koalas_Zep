@@ -1,12 +1,14 @@
 <?php
 
 //$file = 'koalas/koalas/Source/Generic/Builder.zep';
-// $file = 'koalas/koalas/Core/Kql/ExprType/Gt.zep';
-// $retval = zephir_parse_file(file_get_contents($file), $file);
+$file = 'koalas/koalas/Type/Op/Numberizr.zep';
+//$file = 'koalas/koalas/Core/Kql/Entity/Num.zep';
 
-// var_dump($retval);
+$retval = zephir_parse_file(file_get_contents($file), $file);
 
-// exit();
+var_dump($retval);
+
+exit();
 
 $files = [
     'koalas/koalas/Type/Op/Filter.zep',
