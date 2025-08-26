@@ -13,6 +13,11 @@ namespace Koalas\Core\Kql\Entity;
 
 class Lst
 {
+    protected dta = [];
 
+    public function __construct(array dta = [])
+    {
+        let this->dta = dta;
+    }
 
 }

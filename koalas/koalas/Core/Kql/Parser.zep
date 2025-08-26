@@ -65,7 +65,7 @@ class Parser
 
     public function consume(int offs) -> <Parser>
     {
-        let this->tokenList = this->tokenList->sclice(offs);
+        let this->tokenList = array_slice(this->tokenList, offs);
         return this;
     }
 

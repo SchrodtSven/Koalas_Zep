@@ -1,5 +1,6 @@
 /**
  * Class for managing native arrays as instances
+ * Just a playground for me on Zephir
  * 
  * @author Sven Schrodt<sven@schrodt.nrw>
  * @link https://github.com/SchrodtSven/Koalas_Zep
@@ -11,9 +12,9 @@ namespace Koalas\Type;
 use Koalas\Type;
 
 
-class Arr implements \Countable
+class Arr implements \Countable, \ArrayAccess
 {
-    const ERR_404 = "File not found: %s";
+    const ERR_404 = "File not found -> %s";
 
     protected dta = [];
 
@@ -73,5 +74,76 @@ class Arr implements \Countable
     public function count() -> int
     {
         return count(this->dta);
+    }
+
+    // Implementing \ArrayAccess 
+
+    public function offsetSet(offset, value) -> void 
+    {
+        if (is_null(offset)) {
+            let this->dta[] = value;
+        } else {
+            let this->dta[offset] = value;
+        }
+    }
+
+    public function offsetExists(offset) -> bool 
+    {
+        return isset(this->dta[offset]);
+    }
+
+    public function offsetUnset(offset) -> void 
+    {
+        unset(this->dta[offset]);
+    }
+
+    public function offsetGet(offset) -> mixed 
+    {
+        return isset(this->dta[offset]) ? this->dta[offset]  : null;
+    }
+
+    // Stack operations
+
+    public function push(mixed value) -> <Arr>
+    {
+        array_push(this->dta, value);
+        return this;
+    }
+
+    public function pop() -> mixed
+    {
+        return array_pop(this->dta);
+    }
+
+    public function unshift(mixed value) -> <Arr>
+    {
+        array_unshift(this->dta, value);
+        return this;
+    }
+
+    public function shift() -> mixed
+    {
+        return array_shift(this->dta);
+        
+    }
+
+    /**
+     * Gets the first key|index of an array
+     *
+     * @return string|integer|null
+     */
+    public function firstKey() -> string|int|null
+    {
+        return array_key_first($this->dta);
+    }
+
+    /**
+     * Gets the last key|index of an array
+     *
+     * @return string|integer|null
+     */
+    public function lastKey() -> string|int|null
+    {
+        return array_key_last($this->dta);
     }
 }

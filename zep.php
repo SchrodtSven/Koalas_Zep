@@ -3,8 +3,12 @@
 //$file = 'koalas/koalas/Source/Generic/Builder.zep';
 //$file = 'koalas/koalas/Type/Op/Numberizr.zep';
 //$file = 'koalas/koalas/Core/Kql/Entity/Num.zep';
-$file = 'koalas/koalas/Core/Kql/Parser.zep';
+//$file = 'koalas/koalas/Core/Kql/Parser.zep';
+//$file = 'koalas/koalas/Core/Kql/Entity/Lst.zep';
 //$file = 'koalas/koalas/Core/Kql/Tknrz.zep';
+$file = 'koalas/koalas/Type/Arr.zep';
+
+
 $retval = zephir_parse_file(file_get_contents($file), $file);
 
 var_dump($retval);
@@ -45,7 +49,9 @@ $files_two = [
 ];
 $files_new = [
      'koalas/koalas/Core/Kql/Expr.zep',
-     'koalas/koalas/Core/Kql/Tknrz.zep'
+     'koalas/koalas/Core/Kql/Tknrz.zep',
+     'koalas/koalas/Core/Kql/Entity/Lst.zep',
+     'koalas/koalas/Core/Kql/Entity/Num.zep'
       
 ];
 foreach ($files_new as $file) {
