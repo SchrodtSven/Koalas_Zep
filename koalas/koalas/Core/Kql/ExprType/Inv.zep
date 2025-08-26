@@ -21,7 +21,8 @@ class Inv extends Expr
     };
    
     public function __construct(array operands = [])
-    {
+    {   // FIXME: check count(operands)
+        let this->validOpCount = [0, 1];
         parent::__construct("INV(NOT)", "!", operands);
     }
 

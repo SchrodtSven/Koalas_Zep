@@ -37,10 +37,15 @@ $files_two = [
     'koalas/koalas/Core/Kql/ExprType/Le.zep',
     'koalas/koalas/Core/Kql/ExprType/Eq.zep',
     'koalas/koalas/Core/Kql/ExprType/Ne.zep',
-    'koalas/koalas/Core/Kql/ExprType/Ids.zep'
+    'koalas/koalas/Core/Kql/ExprType/Ids.zep',
+    'koalas/koalas/Core/Kql/ExprType/Inv.zep'
 ];
-
-foreach ($files as $file) {
+$files_new = [
+     'koalas/koalas/Core/Kql/Expr.zep',
+     'koalas/koalas/Core/Kql/Tknrz.zep'
+      
+];
+foreach ($files_new as $file) {
     $retval = zephir_parse_file(file_get_contents($file), $file);
 
     var_dump($retval);

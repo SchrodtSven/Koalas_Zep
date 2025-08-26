@@ -27,6 +27,8 @@ class Expr
         get, set
     };
 
+    protected validOpCount = [0, 1, 2];
+
     const ERR_PARM_CNT = 'Wrong parameter count!';
     
     public function __construct(string name, string operator="", array operands = [])
@@ -35,7 +37,7 @@ class Expr
         if operator != "" {
             let this->operator = operator; 
         }
-        if (!in_array(count(operands), [0, 1, 2])) {
+        if (!in_array(count(operands), this->validOpCount)) {
             throw new \InvalidArgumentException(self::ERR_PARM_CNT);
         }
         if count(operands) {
@@ -43,7 +45,7 @@ class Expr
         }
     }
 
-    
+
     public function __toString() -> string
     {
         return sprintf("%s %s %s",

@@ -22,16 +22,23 @@ class ExprTest extends TestCase
 
     public static function tearDownAfterClass(): void {}
 
-
-     #[DataProvider('expressionProvider')]        
+     #[DataProvider('expressionProvider')]
     public function testAllTypes(string $cn, string $nm, string $type)
     {
-        $my = new $cn(['Foo', 'Bar']);
+        if($cn != Inv::class) {
+            $my = new $cn(['Foo', 'Bar']);    
+        } else {
+            $my = new $cn(['Foo']);
+        }
+        
         $this->assertSame((string) $my->getType(), $type);
         $this->assertSame((string) $my->getName(), $nm);
         $ops = $my->getOperands();
         $this->assertSame((string) $ops[0], 'Foo');
-        $this->assertSame((string) $ops[1], 'Bar');
+        if($my->getType() ==  'BINARY' ) {
+            $this->assertSame((string) $ops[1], 'Bar');
+        }
+        
     }
 
     public static function expressionProvider(): array
