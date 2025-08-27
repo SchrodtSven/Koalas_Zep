@@ -4,7 +4,7 @@
  * @author Sven Schrodt<sven@schrodt.nrw>
  * @link https://github.com/SchrodtSven/Koalas_Zep
  * @package 
- * @version 0.1
+ * @version 0.0.2
  * @since 2025-08-19
  */
 namespace Koalas\Type;
@@ -21,20 +21,20 @@ class Str
         let this->cnt = cnt;
     }
 
-    public function q(mark=self::QS)
+    public function q(mark=self::QS) -> <Str>
     {
         this->app(mark)->prep(mark);
 
         return this;
     }
 
-    public function app(string txt)
+    public function app(string txt) -> <Str>
     {
         let this->cnt = this->cnt . txt;
         return this;
     }
 
-    public function prep(string txt)
+    public function prep(string txt) -> <Str>
     {
         let this->cnt = txt . this->cnt;
         return this;
@@ -50,7 +50,7 @@ class Str
         return explode(sep, this->cnt);
     }
 
-    public function replace(fnd, rpl = "")
+    public function replace(fnd, rpl = "") -> <Str>
     {
         let this->cnt = str_replace(fnd, rpl, this->cnt);
         return this;
@@ -64,7 +64,7 @@ class Str
      * @param string end 
      * @return self
      */
-    public function stringsBetween(string start, string end)
+    public function stringsBetween(string start, string end) -> <Str>
     {
         var start, end, pattern, txt;
         let start = preg_quote(start);
@@ -91,7 +91,7 @@ class Str
         return str_contains(this->cnt, txt);
     }
 
-    public function substr(int start, int length=null, string encoding = null)
+    public function substr(int start, int length=null, string encoding = null) -> string
     {
         return mb_substr(this->cnt, start, length, encoding);
     }
@@ -102,7 +102,7 @@ class Str
         
     }
 
-    public function __toString()
+    public function __toString() -> string
     {
         return this->cnt;
     }
@@ -126,7 +126,7 @@ class Str
      * @param string sep
      * @return self
      */
-    public function camelize(string sep = "_", bool lf = true)
+    public function camelize(string sep = "_", bool lf = true) -> <Str>
     {
         var tmp, first, itm;
 
@@ -150,7 +150,7 @@ class Str
      * @param boolean lc
      * @return self
      */
-    public function snakify(bool lc= true, string glue ="_")
+    public function snakify(bool lc= true, string glue ="_") -> <Str>
     {
         return (join(this->splitOnUpperCaseSubstring(), glue)->lower());
     }
@@ -160,7 +160,7 @@ class Str
      *
      * @return self
      */
-    public function upperFirst()
+    public function upperFirst() -> <Str>
     {
         
         let this->cnt = ucfirst(this->cnt);
@@ -172,21 +172,21 @@ class Str
      *
      * @return self
      */
-    public function lowerFirst()
+    public function lowerFirst() -> <Str>
     {
         
         let this->cnt = lcfirst(this->cnt);
         return this;
     }
 
-    public function upper()
+    public function upper() -> <Str>
     {
         
         let this->cnt = strtoupper(this->cnt);
         return this;
     }
 
-    public function lower()
+    public function lower() -> <Str>
     {
         
         let this->cnt = strtolower(this->cnt);

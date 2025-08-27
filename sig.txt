@@ -1,0 +1,156 @@
+koalas/koalas/Core/Dataframe.zep:    public length = 0 {
+koalas/koalas/Core/Dataframe.zep:    public function __construct(dta = [])
+koalas/koalas/Core/Dataframe.zep:    public function analyze()
+koalas/koalas/Core/Dataframe.zep:    public function __toString()
+koalas/koalas/Core/Kql/Grammar.zep:    public foo = 23;
+koalas/koalas/Core/Kql/Entity/Lst.zep:    public function push(mixed val) -> void
+koalas/koalas/Core/Kql/Entity/Lst.zep:    public function pop() -> mixed
+koalas/koalas/Core/Kql/Entity/Lst.zep:    public function unshift(mixed val) -> void
+koalas/koalas/Core/Kql/Entity/Lst.zep:    public function shift() -> mixed
+koalas/koalas/Core/Kql/Entity/Lst.zep:    public function insert(int idx, mixed val) -> <Lst>
+koalas/koalas/Core/Kql/Entity/Lst.zep:    public function rewind() -> void 
+koalas/koalas/Core/Kql/Entity/Lst.zep:    public function current() -> mixed
+koalas/koalas/Core/Kql/Entity/Lst.zep:    public function key() -> mixed
+koalas/koalas/Core/Kql/Entity/Lst.zep:    public function next() -> void
+koalas/koalas/Core/Kql/Entity/Lst.zep:    public function valid() -> bool 
+koalas/koalas/Core/Kql/Entity/Lst.zep:    public function __construct(array dta = [])
+koalas/koalas/Core/Kql/Entity/Lst.zep:    public function getDta() -> <SplDoublyLinkedList>
+koalas/koalas/Core/Kql/Entity/README.md:    public function push(mixed val) -> void {} //
+koalas/koalas/Core/Kql/Entity/README.md:    public function pop() -> mixed {} //
+koalas/koalas/Core/Kql/Entity/README.md:    public function unshift(mixed val) -> void {} //
+koalas/koalas/Core/Kql/Entity/README.md:    public function shift() -> mixed {} //
+koalas/koalas/Core/Kql/Entity/README.md:    public function insert(int idx, mixed val) -> <Lst> {} 
+koalas/koalas/Core/Kql/Entity/README.md:    public function rewind() -> void  {} //
+koalas/koalas/Core/Kql/Entity/README.md:    public function current() -> mixed {} //
+koalas/koalas/Core/Kql/Entity/README.md:    public function key() -> mixed {} //
+koalas/koalas/Core/Kql/Entity/README.md:    public function next() -> void {} //
+koalas/koalas/Core/Kql/Entity/README.md:    public function valid() -> bool  {} //
+koalas/koalas/Core/Kql/Entity/README.md:    public function __construct(array dta = []) {} //
+koalas/koalas/Core/Kql/Entity/README.md:    public function getDta() -> <SplDoublyLinkedList>
+koalas/koalas/Core/Kql/Entity/Num.zep:    public function __construct(var val) 
+koalas/koalas/Core/Kql/Tokens.zep:    public function __construct()
+koalas/koalas/Core/Kql/ExprType/Gt.zep:    public function __construct(array operands = [])
+koalas/koalas/Core/Kql/ExprType/Ge.zep:    public function __construct(array operands = [])
+koalas/koalas/Core/Kql/ExprType/Le.zep:    public function __construct(array operands = [])
+koalas/koalas/Core/Kql/ExprType/Lt.zep:    public function __construct(array operands = [])
+koalas/koalas/Core/Kql/ExprType/Ne.zep:    public function __construct(array operands = [])
+koalas/koalas/Core/Kql/ExprType/Ids.zep:    public function __construct(array operands = [])
+koalas/koalas/Core/Kql/ExprType/Inv.zep:    public function __construct(array operands = [])
+koalas/koalas/Core/Kql/ExprType/Eq.zep:    public function __construct(array operands = [])
+koalas/koalas/Core/Kql/Parser.zep:    public function __construct(array tokenList)
+koalas/koalas/Core/Kql/Parser.zep:    public function parse() -> bool
+koalas/koalas/Core/Kql/Parser.zep:    public function lookAhead(string fnd, int strt) -> int
+koalas/koalas/Core/Kql/Parser.zep:    public function findNext(string needle, int strt = 0) -> int
+koalas/koalas/Core/Kql/Parser.zep:    public function consume(int offs) -> <Parser>
+koalas/koalas/Core/Kql/Parser.zep:    public function slice(int strt, int end) -> array
+koalas/koalas/Core/Kql/Ast.zep:    public function __construct(array parsed)
+koalas/koalas/Core/Kql/Tknrz.zep:    public function __construct(string code)
+koalas/koalas/Core/Kql/Tknrz.zep:    public function tokeniz(string code)
+koalas/koalas/Core/Kql/Tknrz.zep:    public function filterWS() -> <Tknrz>
+koalas/koalas/Core/Kql/Tknrz.zep:    public function getTokens() -> array
+koalas/koalas/Core/Kql/ParseHelper.zep:    public function toLst(string snp) -> <Lst>
+koalas/koalas/Core/Kql/ParseHelper.zep:    public function parseAsgn(string snp)
+koalas/koalas/Core/Kql/ParseHelper.zep:    public function __construct()
+koalas/koalas/Core/Kql/Expr.zep:    public function __construct(string name, string operator="", array operands = [])
+koalas/koalas/Core/Kql/Expr.zep:    public function __toString() -> string
+koalas/koalas/Stream/File/LnParser.zep:    public function __construct(string fnm)
+koalas/koalas/Stream/File/LnParser.zep:    public function getLns() -> array
+koalas/koalas/Stream/File/LnParser.zep:    public function getPrePrse() -> array
+koalas/koalas/Stream/File/LnParser.zep:    public function parse(string sep = ":") -> array
+koalas/koalas/Source/Generic/Builder.zep:    public function getList(array dta, bool withCtx=false) -> string
+koalas/koalas/Source/Generic/Builder.zep:    public function ctxVal(val) -> string
+koalas/koalas/Source/Generic/Assignment.zep:    public function __toString() -> string
+koalas/koalas/Type/Op/Numberizr.zep:    public function determineType(var num) 
+koalas/koalas/Type/Op/Filter.zep:    public function __construct(dta) 
+koalas/koalas/Type/Op/Filter.zep:    public function withCrit(crit) -> <Filter>
+koalas/koalas/Type/Op/Filter.zep:    public function starts(value) -> <Filter>
+koalas/koalas/Type/Op/Filter.zep:     public function contains(value) -> <Filter>
+koalas/koalas/Type/Op/Filter.zep:    public function ends(value) -> <Filter>
+koalas/koalas/Type/Op/Filter.zep:    public function between(min, max) -> <Filter>
+koalas/koalas/Type/Op/Filter.zep:    public function eq(value) -> <Filter>
+koalas/koalas/Type/Op/Filter.zep:    public function ne(value) -> <Filter>
+koalas/koalas/Type/Op/Filter.zep:    public function gt(value) -> <Filter>
+koalas/koalas/Type/Op/Filter.zep:    public function ge(value) -> <Filter>
+koalas/koalas/Type/Op/Filter.zep:    public function lt(value) -> <Filter>
+koalas/koalas/Type/Op/Filter.zep:    public function le(value) -> <Filter>
+koalas/koalas/Type/Op/Filter.zep:    public function generic(value, string op) -> <Filter>
+koalas/koalas/Type/Op/Filter.zep:    public function operate(realVal, op, expected) -> bool
+koalas/koalas/Type/Op/Filter.zep:    public function min(string col) -> mixed
+koalas/koalas/Type/Op/Filter.zep:    public function max(string col) -> mixed
+koalas/koalas/Type/Op/Filter.zep:    public function uniq(string col) -> array
+koalas/koalas/Type/Op/Filter.zep:    public function reset() -> <Filter>
+koalas/koalas/Type/Op/Filter.zep:    public function getDta() -> array
+koalas/koalas/Type/Str.zep:    public function __construct(cnt = "")
+koalas/koalas/Type/Str.zep:    public function q(mark=self::QS)
+koalas/koalas/Type/Str.zep:    public function app(string txt)
+koalas/koalas/Type/Str.zep:    public function prep(string txt)
+koalas/koalas/Type/Str.zep:    public function splitByWS() -> array
+koalas/koalas/Type/Str.zep:    public function splitBy(string sep) -> array
+koalas/koalas/Type/Str.zep:    public function replace(fnd, rpl = "")
+koalas/koalas/Type/Str.zep:    public function stringsBetween(string start, string end)
+koalas/koalas/Type/Str.zep:    public function begins(string txt) -> bool
+koalas/koalas/Type/Str.zep:    public function ends(string txt) -> bool
+koalas/koalas/Type/Str.zep:    public function contains(string txt) -> bool
+koalas/koalas/Type/Str.zep:    public function substr(int start, int length=null, string encoding = null)
+koalas/koalas/Type/Str.zep:    public function substrCount(string needle, string encoding = null) -> int
+koalas/koalas/Type/Str.zep:    public function __toString()
+koalas/koalas/Type/Str.zep:    public function splitOnUpperCaseSubstring() -> array
+koalas/koalas/Type/Str.zep:    public function camelize(string sep = "_", bool lf = true)
+koalas/koalas/Type/Str.zep:    public function snakify(bool lc= true, string glue ="_")
+koalas/koalas/Type/Str.zep:    public function upperFirst()
+koalas/koalas/Type/Str.zep:    public function lowerFirst()
+koalas/koalas/Type/Str.zep:    public function upper()
+koalas/koalas/Type/Str.zep:    public function lower()
+koalas/koalas/Type/Str.zep:    public function matchEnd(string start) -> string
+koalas/koalas/Type/Str.zep:    public function enclose(string start) -> string
+koalas/koalas/Type/README.md:    public function __construct(cnt = "") {} // Constructor
+koalas/koalas/Type/README.md:    public function q(mark=self::QS) {} // Quoting string
+koalas/koalas/Type/README.md:    public function app(string txt) {} // Appending string
+koalas/koalas/Type/README.md:    public function prep(string txt) {} // Prepending string
+koalas/koalas/Type/README.md:    public function splitByWS() -> array {} // split string on whitespace
+koalas/koalas/Type/README.md:    public function splitBy(string sep) -> array {} // Splitting by separator
+koalas/koalas/Type/README.md:    public function replace(fnd, rpl = '') {} // replacing 
+koalas/koalas/Type/README.md:    public function stringsBetween(string start, string end) {} // getting substring between two other strings
+koalas/koalas/Type/README.md:    public function __toString() -> string {} // Magic interceptor for string context
+koalas/koalas/Type/README.md:    public function begins(string txt) -> bool {} //
+koalas/koalas/Type/README.md:    public function ends(string txt) -> bool {} //
+koalas/koalas/Type/README.md:    public function contains(string txt) -> bool {} //
+koalas/koalas/Type/README.md:    public function substr(int start, int length=null, string encoding = null) {} //
+koalas/koalas/Type/README.md:    public function substrCount(string needle, string encoding = null) -> int {} //
+koalas/koalas/Type/README.md:    public function __toString() {} //
+koalas/koalas/Type/README.md:    public function splitOnUpperCaseSubstring() -> array {} //
+koalas/koalas/Type/README.md:    public function camelize(string sep = "_", bool lf = true) {} //
+koalas/koalas/Type/README.md:    public function snakify(bool lc= true, string glue ="_") {} //
+koalas/koalas/Type/README.md:    public function upperFirst() {} //
+koalas/koalas/Type/README.md:    public function lowerFirst() {} //
+koalas/koalas/Type/README.md:    public function upper() {} //
+koalas/koalas/Type/README.md:    public function lower() {} //
+koalas/koalas/Type/README.md:    public function __construct(dta = []) {} // Constructor
+koalas/koalas/Type/README.md:    public function slice (int offset, int length = null, bool preserve_keys = false) -> array {} //
+koalas/koalas/Type/README.md:    public function rows (int offset, int length = null, bool preserve_keys = false) -> array {} //
+koalas/koalas/Type/README.md:    public function cols(string col) -> array {} // strip "column" from array
+koalas/koalas/Type/README.md:    public function walk(clj) -> <Arr> {} // walking over original data
+koalas/koalas/Type/README.md:    public function map(clj) -> array {} // returning new data
+koalas/koalas/Type/README.md:    public function raw() -> array {} // returning internal data as PHP array
+koalas/koalas/Type/README.md:    public static function fromJson(string file) -> <Arr> {} // creating instance from parsed JSON data
+koalas/koalas/Type/README.md:    public function count() -> int {} // returning length of array
+koalas/koalas/Type/Arr.zep:    public function __construct(dta = [])
+koalas/koalas/Type/Arr.zep:    public function slice (int offset, int length = null, bool preserve_keys = false) -> array
+koalas/koalas/Type/Arr.zep:    public function rows (int offset, int length = null, bool preserve_keys = false) -> array
+koalas/koalas/Type/Arr.zep:    public function cols(string col) -> array
+koalas/koalas/Type/Arr.zep:    public function walk(clj) -> <Arr>
+koalas/koalas/Type/Arr.zep:    public function map(clj) -> array
+koalas/koalas/Type/Arr.zep:    public function join(string mark="'") -> string
+koalas/koalas/Type/Arr.zep:    public function raw() -> array
+koalas/koalas/Type/Arr.zep:    public static function fromJson(string file) -> <Arr>
+koalas/koalas/Type/Arr.zep:    public function count() -> int
+koalas/koalas/Type/Arr.zep:    public function offsetSet(offset, value) -> void 
+koalas/koalas/Type/Arr.zep:    public function offsetExists(offset) -> bool 
+koalas/koalas/Type/Arr.zep:    public function offsetUnset(offset) -> void 
+koalas/koalas/Type/Arr.zep:    public function offsetGet(offset) -> mixed 
+koalas/koalas/Type/Arr.zep:    public function push(mixed value) -> <Arr>
+koalas/koalas/Type/Arr.zep:    public function pop() -> mixed
+koalas/koalas/Type/Arr.zep:    public function unshift(mixed value) -> <Arr>
+koalas/koalas/Type/Arr.zep:    public function shift() -> mixed
+koalas/koalas/Type/Arr.zep:    public function firstKey() -> string|int|null
+koalas/koalas/Type/Arr.zep:    public function lastKey() -> string|int|null

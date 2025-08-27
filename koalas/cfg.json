@@ -55,10 +55,10 @@
     },
     "namespace": "koalas",
     "name": "koalas",
-    "description": "Re-writing (my own) data managing stuff in Zephir",
+    "description": "Rewriting Re-writing (own) data managing stuff in Zephir",
     "author": "Sven Schrodt",
-    "version": "0.0.2",
-    "verbose": true,
+    "version": "0.0.1",
+    "verbose": false,
     "info": [
         {
             "rows": [

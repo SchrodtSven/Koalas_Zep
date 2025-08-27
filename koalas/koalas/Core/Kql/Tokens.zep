@@ -4,7 +4,7 @@
  * @author Sven Schrodt<sven@schrodt.nrw>
  * @link https://github.com/SchrodtSven/Koalas_Zep
  * @package 
- * @version 0.1
+ * @version 0.0.2
  * @since 2025-08-22
  */
 namespace Koalas\Core\Kql;
@@ -32,6 +32,14 @@ class Tokens
 
     const ISIN = "in"; //  in() 
     const NIN = "not in"; // not in() 
+
+    const  SEMC = ';';
+    const  CMA = ',';
+    const  DOT = '.';
+    const  MINS = '-';
+    const  PLUS = '+';
+    const  SLASH = '/';
+    const  STAR = '*';
 
     protected funx = [] {
         get

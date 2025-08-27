@@ -7,7 +7,7 @@
  * @author Sven Schrodt<sven@schrodt.nrw>
  * @link https://github.com/SchrodtSven/Koalas_Zep
  * @package 
- * @version 0.1
+ * @version 0.0.2
  * @since 2025-08-22
  */
 namespace Koalas\Core\Kql;
@@ -28,13 +28,14 @@ class Tknrz
         this->tokeniz(code);
     }
 
-    public function tokeniz(string code)
+    public function tokeniz(string code) -> void
     {
         var tmp, newItm, itm;
 
         let this->code = self::PROLOGUE_CHEAT . " " . code;
         
         let tmp = PhpToken::tokenize(this->code);
+        // getting rid of PHP prologue
         array_shift(tmp);
 
         for(itm in tmp) {

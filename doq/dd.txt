@@ -1,0 +1,16 @@
+; data dictionary
+col:column
+frm:from
+flr:filter
+clj:closure
+wlk:walk
+fnm:filename
+len:length
+esc:escape
+enc:enclosure
+dta:data
+kql:Koalas Query Language
+slc:slice
+sep:separator
+snp:snippet
+cnt:content

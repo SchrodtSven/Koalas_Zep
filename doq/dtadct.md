@@ -15,6 +15,4 @@
     <dd>walk</dd>
     <dt>fn</dt>
     <dd>filename</dd>
-    <dt>rpl</dt>
-    <dd>replace</dd>
 </dl>

@@ -1,10 +1,10 @@
 /**
- * Parser dlass for KQL
+ * Parser class for KQL
  * 
  * @author Sven Schrodt<sven@schrodt.nrw>
  * @link https://github.com/SchrodtSven/Koalas_Zep
  * @package 
- * @version 0.1
+ * @version 0.0.2
  * @since 2025-08-22
  */
 namespace Koalas\Core\Kql;
@@ -70,7 +70,7 @@ class Parser
     }
 
     /**
-     * Slicing from token list /between/ st and en params   
+     * Slicing from token list /between/ strt and end params   
     */
     public function slice(int strt, int end) -> array
     {

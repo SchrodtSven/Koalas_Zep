@@ -4,7 +4,7 @@
  * @author Sven Schrodt<sven@schrodt.nrw>
  * @link https://github.com/SchrodtSven/Koalas_Zep
  * @package PhpLab
- * @version 0.1
+ * @version 0.0.2
  * @since 2025-08-21
  */
 
@@ -17,9 +17,7 @@ class Filter
     protected criterion = "" {
         set, get
     };
-    protected dta = [] {
-        get
-    };
+    protected dta = [];
     protected origin = [] {
         get
     };
@@ -53,29 +51,29 @@ class Filter
     }
 
     // @FIXME: multiple column 
-    public function withCrit(crit)
+    public function withCrit(crit) -> <Filter>
     {
         let this->criterion = crit;
         return this;
     }
     
-    public function starts(value)
+    public function starts(value) -> <Filter>
     {
         return this->generic(value, self::SW);
     }
 
-     public function contains(value)
+     public function contains(value) -> <Filter>
     {
         return this->generic(value, self::CT);
     }
 
-    public function ends(value)
+    public function ends(value) -> <Filter>
     {
         return this->generic(value, self::EW);
     }
 
 
-    public function between(min, max)
+    public function between(min, max) -> <Filter>
     {
         if (min > max) {
             var tmp;
@@ -87,37 +85,37 @@ class Filter
         return this->generic([min, max], self::BT);
     }
 
-    public function eq(value)
+    public function eq(value) -> <Filter>
     {
         return this->generic(value, self::EQ);
     }
 
-    public function ne(value)
+    public function ne(value) -> <Filter>
     {
         return this->generic(value, self::NE);
     }
 
-    public function gt(value)
+    public function gt(value) -> <Filter>
     {
         return this->generic(value, self::GT);
     }
 
-    public function ge(value)
+    public function ge(value) -> <Filter>
     {
         return this->generic(value, self::GE);
     }   
 
-    public function lt(value)
+    public function lt(value) -> <Filter>
     {
         return this->generic(value, self::LT);
     }
 
-    public function le(value)
+    public function le(value) -> <Filter>
     {
         return this->generic(value, self::LE);
     }
 
-    public function generic(value, string op)
+    public function generic(value, string op) -> <Filter>
     {
         var tmp, itm;
         let tmp = [];
@@ -133,7 +131,7 @@ class Filter
     }
 
     // helper for generic functions 
-    public function operate(realVal, op, expected)
+    public function operate(realVal, op, expected) -> bool
     {
         switch (op) {
                  
@@ -182,24 +180,29 @@ class Filter
     }
 
   
-    public function min(string col)
+    public function min(string col) -> mixed
     {
         return min(array_values(array_column(this->dta, col)));
     }
 
-    public function max(string col)
+    public function max(string col) -> mixed
     {
         return max(array_values(array_column(this->dta, col)));
     }
     
-    public function uniq(string col)
+    public function uniq(string col) -> array
     {
         return array_values(array_unique(array_column(this->dta, col)));
     }
 
-    public function reset()
+    public function reset() -> <Filter>
     {
         let this->dta = this->origin;
+        return this;
     }
 
+    public function getDta() -> array
+    {
+        return this->dta;
+    }
 }
