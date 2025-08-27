@@ -9,16 +9,18 @@
  */
 namespace Koalas\Source\Generic;
 use Koalas\Source\Generic\Grammar;
-
+use Stringable;
 class Assignment
 {
-    protected left = "" {
-        get, set
-    };
+    protected left = "";
 
-    protected right = ""{
-        get, set
-    };
+    protected right = "";
+
+    public function __construct(mixed left="", mixed right="")
+    {
+        let this->left = (string) left;
+        let this->right = (string) right;
+    }
 
     public function __toString() -> string
     {

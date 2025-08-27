@@ -17,7 +17,7 @@ class Builder
     public function getList(array dta, bool withCtx=false) -> string
     {
         var key, val;
-        if (withCtx) {
+        if withCtx {
             for key, val in dta { 
                let dta[key] = this->ctxVal(dta[key]);
             }
@@ -40,6 +40,6 @@ class Builder
                         ;
         }
 
-        return (string) val;
+        retun (string) val;
     }
 }

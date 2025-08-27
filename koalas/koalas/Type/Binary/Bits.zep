@@ -1,7 +1,7 @@
 /**
  * Class representing an n bit wide data structure 
  *  
- * @author Sven Schrodt<sven@schrodt.club>
+ * @author Sven Schrodt<sven@schrodt.nrw>
  * @link https://github.com/SchrodtSven/Koalas_Zep
  * @package Koalas
  * @version 0.1

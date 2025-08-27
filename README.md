@@ -18,21 +18,25 @@ Stuff to be re-written:
 
 > Zephir code can be found [here](https://github.com/SchrodtSven/Koalas_Zep/tree/main/koalas/koalas)
 
-## File structure 
+## Lines of code
+```sh
+cloc . --read-lang-def=zephir_cloc.txt --exclude-dir=tmp,vendor,ext,phpunit,ide,.phpunit.cache,.zephir
 ```
 
+```
 -------------------------------------------------------------------------------
 Language                     files          blank        comment           code
 -------------------------------------------------------------------------------
-Zephir                          14                                         
-PHP                             23           3747          35322          87982
-JSON                            14              1              0          14442
-Markdown                        11             74              0            197
+PHP                             18            195            157           1939
+JSON                             3              2              0           1156
+Zephir                          29            351            378           1115
+Markdown                        14            100              0            260
+Text                             3              0              0            182
 Bourne Shell                     3              7              6             30
 XML                              1              2              0             28
-Text                             1              3              0             23
-
-
+-------------------------------------------------------------------------------
+SUM:                            71            657            541           4710
+-------------------------------------------------------------------------------
 ```
 
 ## Unit Testing 
