@@ -39,7 +39,7 @@ SUM:                            71            657            541           4710
 -------------------------------------------------------------------------------
 ```
 
-> [!INFO]
+> [!TIP]
 > There is currently more <var>loc</var> in <kbd>PHP</kbd> than <kbd>Zephir</kbd> - guess why?
 
 ## Unit Testing 
