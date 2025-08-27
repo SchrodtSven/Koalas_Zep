@@ -4,14 +4,12 @@ use Koalas\Core\Kql\Tknrz;
 use Koalas\Type\Arr;
 use Koalas\Stream\File\LnParser;
 
-$dta = (new LnParser('doq/dd.txt'))->parse();
-var_dump($dta);
-exit();
-uasort($dta, function($a, $b) {
-    if ($a == $b) {
-        return 0;
-    }
-    return ($a < $b) ? -1 : 1;
-});
+use Koalas\Type\Binary\Bit;
+use Koalas\Type\Binary\Bits;
 
-var_dump($dta);
+
+$kilo = new Bits(1024);
+
+printf('%032b', 1025);
+
+var_dump($kilo);

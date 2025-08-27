@@ -1,0 +1,2 @@
+# Koalas\Type\Binary
+

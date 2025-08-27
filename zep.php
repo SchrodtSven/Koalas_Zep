@@ -10,8 +10,20 @@
 //$file = 'koalas/koalas/Type/Arr.zep';
 //$file = 'koalas/koalas/Stream/File/LnParser.zep';
 //$file = 'koalas/koalas/Type/Op/Filter.zep';
-$file = 'koalas/koalas/Type/Str.zep';
+//$file = 'koalas/koalas/Type/Str.zep';
+
+
+
+
+//$file = 'koalas/koalas/Type/Binary/Bit.zep';
+$file = 'koalas/koalas/Type/Binary/Bits.zep';
+// $file = 'koalas/koalas/Type/Binary/Byte.zep';
+// $file = 'koalas/koalas/Type/Binary/Crumb.zep';
+// $file = 'koalas/koalas/Type/Binary/Nibble.zep';
+// $file = 'koalas/koalas/Type/Binary/Word16.zep';
+// $file = 'koalas/koalas/Type/Binary/Word16.zep';
 // $file = 'koalas/koalas/Dry/SortClj.zep';
+
 $retval = zephir_parse_file(file_get_contents($file), $file);
 
 var_dump($retval);
@@ -53,6 +65,6 @@ foreach ($files as $file) {
     $retval = zephir_parse_file(file_get_contents($file), $file);
 
     var_dump($retval);
-    echo 'weiter!' . PHP_EOL;
+    echo '|__>|' . PHP_EOL;
     $in = fread(STDIN,1000);
 }
