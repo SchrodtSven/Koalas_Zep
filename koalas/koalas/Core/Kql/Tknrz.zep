@@ -17,6 +17,8 @@ class Tknrz
 {
     const PROLOGUE_CHEAT = "<?php";
 
+    const ERR_404 = "File not found -> %s";
+
     private code = "" {
         get, set
     };
@@ -59,6 +61,16 @@ class Tknrz
     {
         return this->tokens;
     }
+    
+    public static function natTokenize(string fnm) -> array
+    {
+         if !file_exists(fnm) {
+            throw new \InvalidArgumentException(sprintf(Tknrz::ERR_404, fnm));
+        }
+        return PhpToken::tokenize(file_get_contents(fnm));
+        
+    }
+
     
 
 }

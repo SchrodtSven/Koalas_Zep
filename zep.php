@@ -2,9 +2,14 @@
 <?php
 require_once 't00lz/color.php';
 require_once 't00lz/ze_parse.php';
-// $file = 'koalas/koalas/Source/Generic/Builder.zep';
-// $parser = new PreParser($file);
-// exit();
+
+
+
+//$file = 'koalas/koalas/Core/Kql/Entity/Lst.zep';
+//$file = 'koalas/koalas/Core/Kql/Entity/Lst.zep';
+$file =  'koalas/koalas/Core/Kql/Expr.zep';
+$parser = new PreParser($file);
+exit();
 
 $file = [
     'koalas/koalas/Core/Dataframe.zep',
@@ -28,15 +33,20 @@ $file = [
     'koalas/koalas/Source/Generic/Assignment.zep',
     'koalas/koalas/Source/Generic/Builder.zep',
     'koalas/koalas/Source/Generic/Grammar.zep',
+    'koalas/koalas/Source/Php/Syntax.zep',
+    'koalas/koalas/Source/Php/Prsr.zep',
+    'koalas/koalas/Source/Php/TknList.zep',
     'koalas/koalas/Stream/File/LnParser.zep',
     'koalas/koalas/Type/Arr.zep',
     'koalas/koalas/Type/Binary/Bit.zep',
     'koalas/koalas/Type/Binary/Bits.zep',
     //'koalas/koalas/Type/Binary/Byte.zep',
-    
+    'koalas/koalas/Source/Php/TknLst.zep',
     'koalas/koalas/Type/Op/Filter.zep',
     'koalas/koalas/Type/Op/Numberizr.zep',
     'koalas/koalas/Type/Str.zep'
 ];
 
 $parser = new PreParser($file);
+print $parser->getErrors() . " errors found!" . PHP_EOL;
+print $parser->count() . " files pre parsed" . PHP_EOL;

@@ -1,4 +1,4 @@
-; data dictionary
+; data dictionary -> used as lower() | ucFirst()
 col:column
 frm:from
 flr:filter
@@ -14,3 +14,7 @@ slc:slice
 sep:separator
 snp:snippet
 cnt:content
+prsr:parser
+cls:class
+lst:list
+dct:dict(ionary)

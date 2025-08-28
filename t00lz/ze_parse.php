@@ -24,7 +24,7 @@ class PreParser
 
     private const int EXT_ERR = 12 + 11;
 
-    public function __construct(string|array $file)
+    public function __construct(private string|array $file)
     {
         if (is_array($file)) {
             foreach($file as $itm) {
@@ -38,9 +38,11 @@ class PreParser
 
     }
 
-    public function parse(string $file) {
+    public function parse(string $file) 
+    {
         return  zephir_parse_file(file_get_contents($file), $file);
     }
+    
     public function getMsg(array $ret, string $file): string
     {
         $msg = "";
@@ -102,5 +104,34 @@ class PreParser
         $this->stopOnError = $stopOnError;
 
         return $this;
+    }
+
+    /**
+     * Get the value of errors
+     *
+     * @return int
+     */
+    public function getErrors(): int
+    {
+        return $this->errors;
+    }
+
+    /**
+     * Set the value of errors
+     *
+     * @param int $errors
+     *
+     * @return self
+     */
+    public function setErrors(int $errors): self
+    {
+        $this->errors = $errors;
+
+        return $this;
+    }
+
+    public function count(): int
+    {
+        return count($this->file);
     }
 }

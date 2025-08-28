@@ -1,16 +1,6 @@
 <?php
 
-use function defined;
-use function function_exists;
-use function getenv;
-use function posix_isatty;
-use function str_pad;
-use function strlen;
-use function strtoupper;
-use function substr;
 
-use const PHP_EOL;
-use const PHP_OS;
 class CliColor
 {
     public const FG_BLACK        = 1;
@@ -115,7 +105,7 @@ class CliColor
     /**
      * Colorizes the string using provided colors.
      */
-    public static function colorize(string $string, int $fg = null, int $at = null, int $bg = null): string
+    public static function colorize(string $string, ?int $fg = null, ?int $at = null, ?int $bg = null): string
     {
         // Shell not supported, exit early
         if (!static::isSupportedShell()) {

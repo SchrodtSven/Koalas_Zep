@@ -15,7 +15,7 @@
 namespace Koalas\Core\Kql\Entity;
 
 
-class Lst implements \Iterator
+class Lst implements \Iterator, \Countable, \ArrayAccess
 {    
     protected dta = null;
     protected pos = null;
@@ -99,4 +99,35 @@ class Lst implements \Iterator
     {
         return this->dta;
     }
+
+    public function count() -> int
+    {
+        return count(this->dta);
+    }
+
+     public function offsetSet(offset, value) -> void 
+    {
+        if (is_null(offset)) {
+            let this->dta[] = value;
+        } else {
+            let this->dta[offset] = value;
+        }
+    }
+
+    public function offsetExists(offset) -> bool 
+    {
+        return isset(this->dta[offset]);
+    }
+
+    public function offsetUnset(offset) -> void 
+    {
+        unset(this->dta[offset]);
+    }
+
+    public function offsetGet(offset) -> mixed 
+    {
+        return isset(this->dta[offset]) ? this->dta[offset]  : null;
+    }
+
+    
 }

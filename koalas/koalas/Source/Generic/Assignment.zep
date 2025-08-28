@@ -16,7 +16,7 @@ class Assignment
 
     protected right = "";
 
-    public function __construct(mixed left="", mixed right="")
+    public function __construct(var left="", var right="")
     {
         let this->left = (string) left;
         let this->right = (string) right;

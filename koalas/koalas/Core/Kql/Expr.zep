@@ -11,21 +11,15 @@ namespace Koalas\Core\Kql;
 
 class Expr
 {
-    protected name = "" {
-        get, set
-    };
+    protected vldTypz = ["BINARY", "TERNARY", "POSTFIX", "PREFIX"];
 
-    protected type = "BINARY" {
-        get, set
-    };
+    protected name = "";
 
-    protected operands =  [] {
-        get, set
-    };
+    protected type = "BINARY";
 
-    protected operator = "==" {
-        get, set
-    };
+    protected operands =  [];
+
+    protected operator = "==";
 
     protected validOpCount = [0, 1, 2];
 
@@ -45,6 +39,32 @@ class Expr
         }
     }
 
+    public function getName() -> string
+    {
+        return this->name;
+    }
+
+    public function getType() -> string
+    {
+        return this->type;
+    }
+
+    public function getOperands() -> array
+    {
+        return this->operands;
+    }
+
+    public function getOperator() -> string
+    {
+        return this->operator;
+    }
+
+    public function getValidOpCount() -> string
+    {
+        return this->validOpCount;
+    }
+
+    
 
     public function __toString() -> string
     {

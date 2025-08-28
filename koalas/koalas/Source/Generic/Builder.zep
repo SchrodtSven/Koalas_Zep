@@ -34,12 +34,12 @@ class Builder
         switch (gettype(val)) {
             case "string":
                 return sprintf("%s%s%s",
-                        Grammar::DOUBLE_QUOTE,
+                        "\"",
                         val,
-                        Grammar::DOUBLE_QUOTE)
+                        "\"")
                         ;
         }
 
-        retun (string) val;
+        return (string) val;
     }
 }
