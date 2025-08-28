@@ -1,7 +1,6 @@
 <?php
-function a(int $b): bool
+function a(int $b): void
 {
     $c = 11;
-    return $b %2 == 0;
 }
 ?>

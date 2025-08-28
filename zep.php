@@ -7,9 +7,9 @@ require_once 't00lz/ze_parse.php';
 
 //$file = 'koalas/koalas/Core/Kql/Entity/Lst.zep';
 //$file = 'koalas/koalas/Core/Kql/Entity/Lst.zep';
-$file =  'koalas/koalas/Core/Kql/Expr.zep';
-$parser = new PreParser($file);
-exit();
+// $file =  'koalas/koalas/Core/Kql/Expr.zep';
+// $parser = new PreParser($file);
+// exit();
 
 $file = [
     'koalas/koalas/Core/Dataframe.zep',

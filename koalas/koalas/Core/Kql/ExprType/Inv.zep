@@ -16,9 +16,7 @@ class Inv extends Expr
     const OP = "!";
     const OP_NM = "INV(NOT)";
 
-    protected type = "PREFIX" {
-        get, set
-    };
+    protected type = "PREFIX";
    
     public function __construct(array operands = [])
     {   // FIXME: check count(operands)
