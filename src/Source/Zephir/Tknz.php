@@ -17,6 +17,7 @@ class Tknz
     private array $nameToId = [
         "ZT_LET" => 1024, // 'let'
         "ZT_RT_TYP" => 1025, // '->'
+        "ZT_VAR" => 1025, // 'var'
     ];
 
     public function __construct()

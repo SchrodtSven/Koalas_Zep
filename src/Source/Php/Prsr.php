@@ -15,6 +15,7 @@ namespace SchrodtSven\Koalas\Source\Php;
 use Koalas\Core\Kql\Tknrz;
 use Koalas\Source\Php\TknLst;
 use PhpToken;
+use PHPUnit\Event\Code\Phpt;
 use stdClass;
 
 class Prsr
@@ -27,6 +28,32 @@ class Prsr
     {
         $this->lst = new TknLst(\PhpToken::tokenize($code));
         $this->prsd = new TknLst();
+    }
+
+    public function consume()
+    {}
+
+    public function peek(int $idx) : \PhpToken
+    {
+        return $this->lst[$idx];
+    }
+
+    public function poke(int $idx, \PhpToken $val): self
+    {
+        $this->lst[$idx] = $val;
+        return $this;
+    }
+
+    public function prep($idx, mixed $val): self
+    {
+        $this->lst->insert($idx, $val);
+        return $this;
+    }
+
+    public function unset(int $idx) : self
+    {
+        $this->lst->offsetUnset($idx);
+        return $this;
     }
 
     /**
@@ -54,7 +81,7 @@ class Prsr
     }
 
     /**
-     * Sanitizing PHP var names ($@[0]) to a generic form of variable name
+     * Sanitizing PHP var names (@[0]=='$') to a generic form of variable name
      *
      * @return void
      */
@@ -74,7 +101,7 @@ class Prsr
         $tmp = [];
         for ($i = 0; $i < count($this->lst); $i++) {
             if (!in_array($this->lst[$i]->id, $criteria)) {
-                $tmp[] = $this->lst[$i];
+                $tmp[$i] = $this->lst[$i];
             }
         }
         return $tmp;
@@ -100,11 +127,7 @@ class Prsr
         return -1;
     }
 
-    public function prepend($idx, mixed $val): self
-    {
-        $this->lst->insert($idx, $val);
-        return $this;
-    }
+    
 
     public function findBetween(int|string $tknId, int $offset, int $last)
     {
@@ -115,6 +138,8 @@ class Prsr
         }
         return -1;
     }
+
+    
 
     /**
      * Preparse PHP token list for usage in Zephir
@@ -136,52 +161,10 @@ $tknz = $parser->filter([
     T_CLOSE_TAG, 
     //\T_WHITESPACE
 ]);
-
-foreach ($tknz as $id=> $tkn) {
-    printf(
-        "[%d]: %s - %s %s",
-        $id,
-        $tkn->getTokenName(),
-        implode(' : ', get_object_vars($tkn)),
-        PHP_EOL
-
-    );
+//$parser->unset(2);
+foreach($tknz as $idx => $val) {
+    $ln = implode(' : ', get_object_vars($val));
+    echo "{$idx}: {$ln} {$val->getTokenName()}\n";
 }
 
-
-
-$os = $parser->findNext('{');
-
-$last = $parser->find(\T_VAR, $os); // 
-
-var_dump($parser->findBetween(61, 17, $last));
-$let = new PhpToken(1025, 'let');
-$tknz23 = $parser->prepend($os +2, $let)->filter([T_OPEN_TAG]);
-
-// var_dump($parser->getLst());
-echo implode(' ', $tknz23);
-
-foreach($tknz23 as $itm) {
-    if ($itm->id == \T_WHITESPACE) {
-        echo "'{$itm->text}'" . PHP_EOL;
-    }
-}
-
-
-
-
-exit();
-// prepend($os -1, ' ')->
-
-
-
-
-
-// $lst = $parser->getLst();
-// $lst->insert(0, 'FooBar');
-// foreach($lst as $idx => $itm) {
-//     echo $idx, PHP_EOL;
-//     var_dump($itm);
-// }
-
-//var_dump($lst);
+echo implode('', $tknz);

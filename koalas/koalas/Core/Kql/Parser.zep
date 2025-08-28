@@ -14,6 +14,7 @@ class Parser
 
     const TXT_COL = "text";
 
+    //@fixme: implment get/set with return type hints!
     protected tokenList = [] {
         get, set
     };

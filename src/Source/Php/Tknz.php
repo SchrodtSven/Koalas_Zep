@@ -224,9 +224,3 @@ class Tknz
         return $this;
     }
 }
-
-$tk = new Tknz();
-
-$list = $tk->getNameToId();
-
-print_r([max($list), min($list)]);
