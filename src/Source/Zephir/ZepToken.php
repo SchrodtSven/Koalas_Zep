@@ -2,6 +2,7 @@
 /**
  * Zephir Tokens - extending \PhpToken
  * 
+ * @TODO check id => text in self::sanitize
  * @author Sven Schrodt<sven@schrodt.nrw>
  * @link https://github.com/SchrodtSven/Koalas_Zep
  * @package 
@@ -22,4 +23,17 @@ class ZepToken extends \PhPToken
         if($this->id <1024)
             throw new \OutOfBoundsException(sprintf(self::ERR_ID_BND, $this->id));
     }
+
+    public function get(string $key): mixed
+    {
+            return $this->$key ?? null;
+        
+    }
+
+    public function stringy(): string
+    {
+        return "id: {$this->id}, text: {$this->text}, line: {$this->line}, pos: {$this->pos}";
+    }
+
+
 }

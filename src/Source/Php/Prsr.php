@@ -13,7 +13,7 @@
 namespace SchrodtSven\Koalas\Source\Php;
 
 use Koalas\Core\Kql\Tknrz;
-use Koalas\Source\Php\TknLst;
+use SchrodtSven\Koalas\Source\Php\TknLst;
 use PhpToken;
 use PHPUnit\Event\Code\Phpt;
 use stdClass;
@@ -46,13 +46,13 @@ class Prsr
 
     public function prep($idx, mixed $val): self
     {
-        $this->lst->insert($idx, $val);
+        $this->lst->prepend($idx, $val);
         return $this;
     }
 
     public function unset(int $idx) : self
     {
-        $this->lst->offsetUnset($idx);
+        unset($this->lst[$idx]);
         return $this;
     }
 
@@ -154,17 +154,3 @@ class Prsr
     }
 }
 
-$parser = new Prsr(file_get_contents('gen_tst_prse.php'));
-$parser->sanitzeVars();
-$tknz = $parser->filter([
-    T_OPEN_TAG,
-    T_CLOSE_TAG, 
-    //\T_WHITESPACE
-]);
-//$parser->unset(2);
-foreach($tknz as $idx => $val) {
-    $ln = implode(' : ', get_object_vars($val));
-    echo "{$idx}: {$ln} {$val->getTokenName()}\n";
-}
-
-echo implode('', $tknz);
