@@ -56,12 +56,61 @@ class TknLst extends SplDoublyLinkedList
         while(this->valid()) {
             let val = this->current();
             let ln = implode(" : ", get_object_vars(val));
-            let cls = "TKN"; //val::class;
+            let cls = get_class(val);
             //if (val->id != \T_WHITESPACE)
-            let tmp = tmp . idx . ": " . Stringify::fromTkn(val) . PHP_EOL;
+            let tmp = tmp . idx . ": " . Stringify::fromTkn(val) . " type: \\" . cls . PHP_EOL;
             let idx ++;
             this->next();
         }
         return tmp;
     }
+
+    /**
+     * Goto index == idx
+     */
+    public function gto(int idx) -> void
+    {
+        this->chkIdx(idx);
+        this->rewind();
+        while(this->key()!=idx) {
+            this->next();
+        }
+    }
+
+    /**
+     * Slicing between offs and last
+     */
+    public function slc(int offs, int last) -> <TknLst>
+    {
+        this->chkIdx(offs);
+        this->chkIdx(last);
+        var tmp;
+        let tmp = new TknLst();
+        this->gto(offs);
+        tmp->push(this->current());
+        while(this->key()!= last) {
+            this->next();
+            tmp->push(this->current());
+        }
+        return tmp;
+    }
+
+    /** 
+     * checking, if idx is valid - is between 0 and count(this)-1
+     */
+    public function chkIdx(int idx)
+    {
+        var mxm;
+        let mxm = count(this);
+        let mxm --;
+        if (idx > mxm || idx < 0) {
+            throw new \InvalidArgumentException(
+                sprintf("Index error! %s - valid boundaries: %d - %d", 
+                        idx, 
+                        0, 
+                        mxm)
+            );
+        }
+    }
+
 }

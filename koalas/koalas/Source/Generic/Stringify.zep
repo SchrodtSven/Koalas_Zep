@@ -17,16 +17,14 @@ class Stringify
 {
     public static function fromTkn(<PhpToken> tkn) -> string
     {
-        var tmp, i;
+        var tmp;
         let tmp = "";
-        //for i in array_keys(get_object_vars(tkn)) {
-            let tmp = tmp . "id: " . (string) tkn->id . " ";
-            let tmp = tmp . "text: '" . (string) tkn->text . "' ";
-            let tmp = tmp . "line: " . (string) tkn->line . " ";
-            let tmp = tmp . "pos: " . (string) tkn->pos . " ";
-            let tmp = tmp . "name: " . (string) tkn->getTokenName();
-        //}
-        //let tmp = tmp . PHP_EOL;
+        
+        let tmp = tmp . "id: " . (string) tkn->id . " ";
+        let tmp = tmp . "text: '" . (string) tkn->text . "' ";
+        let tmp = tmp . "line: " . (string) tkn->line . " ";
+        let tmp = tmp . "pos: " . (string) tkn->pos . " ";
+        let tmp = tmp . "name: " . (string) tkn->getTokenName();
         return tmp;
 
     }

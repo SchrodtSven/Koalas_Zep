@@ -49,11 +49,7 @@ class Prsr
         return this;
     }
 
-    public function del(int idx) -> <Prsr>
-    {
-        unset(this->lst[idx]);
-        return this;
-    }
+ 
 
     /**
      * Get the value of lst
