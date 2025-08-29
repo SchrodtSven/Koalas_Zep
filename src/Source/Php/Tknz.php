@@ -1,6 +1,6 @@
 <?php
 /**
- * Parser for PHP source code
+ * PHP Tokens
  * 
  * @author Sven Schrodt<sven@schrodt.nrw>
  * @link https://github.com/SchrodtSven/Koalas_Zep
@@ -10,7 +10,6 @@
  */
 
 namespace SchrodtSven\Koalas\Source\Php;
-
 class Tknz
 {
     private array $idToName;
