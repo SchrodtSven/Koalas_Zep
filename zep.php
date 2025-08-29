@@ -46,7 +46,8 @@ $file = [
     'koalas/koalas/Type/Op/Filter.zep',
     'koalas/koalas/Type/Op/Numberizr.zep',
     'koalas/koalas/Type/Str.zep',
-    'koalas/koalas/Source/Generic/Stringify.zep'
+    'koalas/koalas/Source/Generic/Stringify.zep',
+    'koalas/koalas/Source/Php/Prsr.zep'
 ];
 
 $parser = new PreParser($file);
