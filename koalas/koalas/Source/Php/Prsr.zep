@@ -16,11 +16,11 @@ use PhpToken;
 
 class Prsr
 {
-    private lst; // original list
+    private lst; // original list TknLst
 
-    private prsd;  // parsed list
+    private prsd;  // parsed list TknLst
 
-    private code = "";  // original source code
+    private code = "";  // original source code string
 
     public function __construct(string code)
     {
@@ -63,15 +63,14 @@ class Prsr
 
 
     /**
-     * Sanitizing PHP var names (@[0]=='') to a generic form of variable name
+     * Sanitizing PHP var names if(@[0]=="$") to a generic form of variable name
      *
      * @return void
      */
     public function sanitzeVars() -> <Prsr>
     {
-        int offs, i, last;
+        int offs, i, last= count(this->lst);
         var curr;
-        let last = count(this->lst);
         let last --;
         let  offs = 0; 
 

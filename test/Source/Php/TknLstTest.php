@@ -5,8 +5,15 @@ namespace Tests;
 use PHPUnit\Framework\TestCase;
 use PHPUnit\Framework\Attributes\DataProvider;
 use Koalas\Source\Php\TknLst;
-
-
+use Koalas\Core\Kql\ExprType\Inv;
+use Koalas\Core\Kql\ExprType\Eq;
+use Koalas\Core\Kql\ExprType\Ne;
+use Koalas\Core\Kql\ExprType\Gt;
+use Koalas\Core\Kql\ExprType\Ge;
+use Koalas\Core\Kql\ExprType\Ids;
+use Koalas\Core\Kql\ExprType\Lt;
+use Koalas\Core\Kql\ExprType\Le;
+ 
 class TknLstTest extends TestCase
 {
 

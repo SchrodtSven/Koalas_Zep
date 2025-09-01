@@ -37,6 +37,7 @@ $file = [
     'koalas/koalas/Source/Zephir/ZepTkn.zep',
     'koalas/koalas/Source/Php/Prsr.zep',
     'koalas/koalas/Source/Php/TknLst.zep',
+    'koalas/koalas/Source/Php/Fltr.zep',
     'koalas/koalas/Stream/File/LnParser.zep',
     'koalas/koalas/Type/Arr.zep',
     'koalas/koalas/Type/Binary/Bit.zep',

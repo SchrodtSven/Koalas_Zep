@@ -1,0 +1,14 @@
+EQ:==:equals
+NE:!=:not equals
+GT:>:greater than
+LT:<:less than
+GE:>=:greater than or equals
+LE:<=:less than or equals
+SW:SW:starts with
+EW:EW:ends with
+CT:CT:contains
+BT:BT:between
+MIN:MIN:min()
+MAX:MAX:max()
+ISIN:IN: in() 
+NIN:NIИ:not in()

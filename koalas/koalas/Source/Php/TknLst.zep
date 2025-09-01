@@ -113,4 +113,15 @@ class TknLst extends SplDoublyLinkedList
         }
     }
 
+    public function toArray() -> array
+    {
+        array tmp = [];
+        this->rewind();
+        while(this->valid()) {
+            let tmp[] = this->current();
+            this->next();
+        }
+        return tmp;
+    }
+
 }

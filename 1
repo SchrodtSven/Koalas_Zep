@@ -1,0 +1,15 @@
+Zephir\Exception\ParseException::__construct(): Implicitly marking parameter $previous as nullable is deprecated, the explicit nullable type must be used instead
+PHP Fatal error:  Uncaught ErrorException: Zephir\Exception\ParseException::__construct(): Implicitly marking parameter $previous as nullable is deprecated, the explicit nullable type must be used instead in /Users/svenschrodt/.composer/vendor/phalcon/zephir/src/Exception/ParseException.php:34
+Stack trace:
+#0 /Users/svenschrodt/.composer/vendor/composer/ClassLoader.php(576): {closure:/Users/svenschrodt/.composer/vendor/phalcon/zephir/zephir:55}(8192, 'Zephir\\Exceptio...', '/Users/svenschr...', 34)
+#1 /Users/svenschrodt/.composer/vendor/composer/ClassLoader.php(576): include()
+#2 /Users/svenschrodt/.composer/vendor/composer/ClassLoader.php(427): {closure:Composer\Autoload\ClassLoader::initializeIncludeClosure():575}('/Users/svenschr...')
+#3 /Users/svenschrodt/.composer/vendor/phalcon/zephir/src/CompilerFile.php(487): Composer\Autoload\ClassLoader->loadClass('Zephir\\Exceptio...')
+#4 /Users/svenschrodt/.composer/vendor/phalcon/zephir/src/Compiler.php(2088): Zephir\CompilerFile->preCompile(Object(Zephir\Compiler))
+#5 /Users/svenschrodt/.composer/vendor/phalcon/zephir/src/Compiler.php(2189): Zephir\Compiler->preCompile('koalas/Source/P...')
+#6 /Users/svenschrodt/.composer/vendor/phalcon/zephir/src/Compiler.php(915): Zephir\Compiler->recursivePreCompile('koalas')
+#7 /Users/svenschrodt/.composer/vendor/phalcon/zephir/src/Compiler.php(1830): Zephir\Compiler->generate()
+#8 /Users/svenschrodt/.composer/vendor/phalcon/zephir/zephir(349): Zephir\Compiler->stubs()
+#9 /Users/svenschrodt/.composer/vendor/bin/zephir(119): include('/Users/svenschr...')
+#10 {main}
+  thrown in /Users/svenschrodt/.composer/vendor/phalcon/zephir/src/Exception/ParseException.php on line 34
