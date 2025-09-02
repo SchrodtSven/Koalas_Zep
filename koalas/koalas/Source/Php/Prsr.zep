@@ -25,7 +25,8 @@ class Prsr
     public function __construct(string code)
     {
         let this->code = code;
-        let this->lst = new TknLst(\PhpToken::tokenize(code));
+        let this->lst = new TknLst(PhpToken::tokenize(code));
+        this->lst->shift();
         let this->prsd = new TknLst();
     }
 
@@ -69,94 +70,70 @@ class Prsr
      */
     public function sanitzeVars() -> <Prsr>
     {
-        int offs, i, last= count(this->lst);
+        int offs = 0, pos = 0, last = count(this->lst);;
         var curr;
-        let last --;
-        let  offs = 0; 
+        
+        let last --, offs = 0; 
 
-        for i in range(offs, last) {
-            let curr = this->lst[i];
-            if (curr->id  == T_VARIABLE) {
+        this->lst->rewind();
+        while(this->lst->valid()) {
+            let curr = this->lst->current();
+            if curr->id == T_VARIABLE {
                 let curr->text = substr(curr->text, 1);
-                let this->lst[i] = curr;
+                this->lst->offsetSet(pos, curr);
             }
+            this->lst->next();  
+            let pos++;
+            
         }
+
+
+        
         return this;
     }
 
-    public function find(int offs, mixed needle) -> int
+    public function find(var hays, int offs = 0 ) -> int
     {
-        var val, pos;
-        let pos = 0;
-        this->lst->rewind();
+        var curr;
+        if !is_array(hays) {
+            let hays = [hays];
+        }
+        this->adjOffs(offs);
         while(this->lst->valid()) {
-            let val = this->lst->current();
-            if val->id == needle || val->text == needle {
-                return pos;
+            let curr = this->lst->current();
+            if in_array(curr->id, hays) ||in_array (curr->text, hays) {
+                return this->lst->key();
             }
-            let pos++;
+            this->lst->next();
         }
         return -1;
     }
 
+    public function findBetween(var needle, var val = ";", int offs = 0) -> int
+    {
+        var last, curr;
+        this->adjOffs(offs);
+           
+        let last = this->find(val, offs);
 
-    // public function filter(array criteria = [\T_WHITESPACE]): array
-    // {
-    //     var i, tmp;
-    //     let tmp = [];
-    //     for (i = 0; i < count(this->lst); i++) {
-    //         if (!in_array(this->lst[i]->id, criteria)) {
-    //             tmp[i] = this->lst[i];
-    //         }
-    //     }
-    //     return tmp;
-    // }
+        while(this->lst->key() <= last) {
+            let curr = this->lst->current();
+             if curr->id == needle || curr->text == needle {
+                return this->lst->key();
+            }
+            this->lst->next();
+        }
 
-    // public function findNext(int|string tknId, int offset=0)
-    // {
+        return -1;
+    }
 
-    //     for (i = offset; i < count(this->lst); i++) {
-    //         if (this->lst[i]->id == tknId || this->lst[i]->text == tknId) {
-    //             return i;
-    //         }
-    //     }
-    //     return -1;
-    // }
-
-    // public function find(int|string tknId, int offset)
-    // {
-    //     for (i = offset; i < count(this->lst); i++) {
-    //         if (this->lst[i]->id == tknId || this->lst[i]->text == tknId) {
-    //             return i;
-    //         }
-    //     }
-    //     return -1;
-    // }
-
-    
-
-    // public function findBetween(int|string tknId, int offset, int last)
-    // {
-    //     for (i = offset; i < last; i++) {
-    //         if (this->lst[i]->id == tknId || this->lst[i]->text == tknId) {
-    //             return i;
-    //         }
-    //     }
-    //     return -1;
-    // }
-
-    
-
-    // /**
-    //  * Preparse PHP token list for usage in Zephir
-    //  *
-    //  * @return self
-    //  */
-    // public function zephirize() -> <Prsr>
-    // {
-    //     for (i = 0; i < count(this->lst); ++i) {
-    //     }
-    //     return this;
-    // }
+    public function adjOffs(int offs) -> void
+    {
+        if offs == 0 {
+            this->lst->rewind();
+        } else {
+             this->lst->gto(offs);
+        }
+    }
 }
 

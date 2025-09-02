@@ -9,7 +9,7 @@
  */
 namespace Koalas\Source\Php;
 
-class syntax
+class Syntax
 {
     const MAX_V = 8.3;
 }

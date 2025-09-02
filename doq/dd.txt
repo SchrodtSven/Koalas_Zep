@@ -21,3 +21,6 @@ dct:dict(ionary)
 crt:criterion
 crtz:criteria
 org:original
+adj:adjust
+offs:offset
+curr:current

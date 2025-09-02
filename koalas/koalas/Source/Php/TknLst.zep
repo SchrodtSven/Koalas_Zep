@@ -42,11 +42,26 @@ class TknLst extends SplDoublyLinkedList
      * @return void
      */
 
-    public function prepend(int idx, <PhpToken> token)
+    public function prepend(int idx, <PhpToken> token) -> <TknList>
     {
         this->add(idx, token);
+        return this;
     }
 
+
+    /**
+     * Wrapper for self::offsetUnset() as fluent interface
+     *
+     * @param \PhpToken token
+     * @return void
+     */
+
+    public function del(int idx) -> <TknList>
+    {
+        this->offsetUnset(idx);
+        return this;
+    }
+        
     public function __toString() -> string
     {
         var tmp, idx, val, ln, cls;
@@ -58,7 +73,7 @@ class TknLst extends SplDoublyLinkedList
             let ln = implode(" : ", get_object_vars(val));
             let cls = get_class(val);
             //if (val->id != \T_WHITESPACE)
-            let tmp = tmp . idx . ": " . Stringify::fromTkn(val) . " type: \\" . cls . PHP_EOL;
+            let tmp = tmp . "Idx: " . idx . " " . Stringify::fromTkn(val) . " type: \\" . cls . PHP_EOL;
             let idx ++;
             this->next();
         }

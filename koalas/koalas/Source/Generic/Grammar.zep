@@ -24,11 +24,11 @@ class Grammar
     const BRACES_END   = "}";  // close braces
     const BRACKETS_START = "[";  // open brackets
     const BRACKETS_END   = "]";  // close brackets
-    const PIPE   = "|";  // close pipe
-    const TICK = "´";  // open tick
-    const BACKTICK   = "`";  // close backtick
-    const SINGLE_QUOTE  = "'";  // close single quotes
-    const DOUBLE_QUOTE = "\"";  // open double quotes
+    const PIPE   = "|";  // pipe
+    const TICK = "´";  // tick
+    const BACKTICK   = "`";  // backtick
+    const SINGLE_QUOTE  = "'";  // single quotes
+    const DOUBLE_QUOTE = "\"";  // double quotes
     const TYPOGRAPHIC_SINGLE_QUOTE_START = "‘";  // open typographic single quotes
     const TYPOGRAPHIC_SINGLE_QUOTE_END   = "’";  // close typographic single quotes
     const TYPOGRAPHIC_DOUBLE_QUOTE_START = "“";  // open typographic double quotes
