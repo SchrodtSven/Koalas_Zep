@@ -113,7 +113,7 @@ class TknLst extends SplDoublyLinkedList
     /** 
      * checking, if idx is valid - is between 0 and count(this)-1
      */
-    public function chkIdx(int idx)
+    public function chkIdx(int idx) -> void
     {
         var mxm;
         let mxm = count(this);
@@ -138,5 +138,10 @@ class TknLst extends SplDoublyLinkedList
         }
         return tmp;
     }
+
+    // public function toCode() -> string
+    // {
+    //     return implode("", this->toArray());
+    // }
 
 }

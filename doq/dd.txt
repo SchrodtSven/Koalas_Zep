@@ -1,26 +1,26 @@
-; data dictionary -> used as lower(vars) | ucFirst(Class names)
-col:column
-frm:from
-fltr:filter
+; data dictionary -> used as lower(vars) | Ucfirst / CamelCased(Class names, methods)
+adj:adjust
 clj:closure
-wlk:walk
-fnm:filename
-len:length
-esc:escape
-enc:enclosure
-dta:data
-kql:Koalas Query Language
-slc:slice
-sep:separator
-snp:snippet
-cnt:content
-prsr:parser
 cls:class
-lst:list
-dct:dict(ionary)
+cnt:content
+col:column
 crt:criterion
 crtz:criteria
-org:original
-adj:adjust
-offs:offset
 curr:current
+dct:dict(ionary)
+dta:data
+enc:enclosure
+esc:escape
+fltr:filter
+fnm:filename
+frm:from
+kql:Koalas Query Language
+len:length
+lst:list
+offs:offset
+org:original
+prsr:parser
+sep:separator
+slc:slice
+snp:snippet
+wlk:walk

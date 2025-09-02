@@ -15,19 +15,30 @@
 
 namespace Koalas\Source\Zephir;
 use Koalas\Source\Generic\Stringify;
-use  Koalas\Source\Php\TknLst;
+use Koalas\Source\Php\TknLst;
+use Koalas\Source\Php\Prsr;
 
-class Trnsplr extends \PhPToken
+class Trnsplr
 {
-    private lst; // original list TknLst
-    private prsd;  // parsed list TknLst
-    private code = "";  // destination source code string (Zephir)
+    private lst; // original list <TknLst>
+    private prsd; // parsed list <TknLst>
+    private prsr; // parsed list <Prsr>
+    private code = "";  // destination (Zephir) source code string 
 
-    public function __construct(TknList lst)
+    public function __construct(<Prsr> prsr)
     {
-        let this->lst = lst;
+        let this->prsr = prsr;
+        this->prsr->sanitzeVars();
         let this->prsd = new TknLst();
     }
-    
+
+    public static function fromFile(string fnm) -> <Trnsplr>
+    {
+        if !file_exists(fnm) {
+            throw new \InvalidArgumentException(sprintf("File not found: %s", fnm));
+        }
+        return new self(file_get_contents(fnm));
+    }
+
 
 }

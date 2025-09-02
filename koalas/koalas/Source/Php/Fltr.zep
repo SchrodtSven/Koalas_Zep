@@ -9,7 +9,7 @@
  */
 namespace Koalas\Source\Php;
 use SplDoublyLinkedList;
-use Koalas\Source\Php\TknList;
+use Koalas\Source\Php\TknLst;
 
 class Fltr
 {
