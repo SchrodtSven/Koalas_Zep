@@ -26,4 +26,5 @@ Ok, we can *not* access (<kbd>ArrayAccess</kbd> implementing types) the snaky wa
  - <code>a['3:']</code>
  - <code>a[':4']</code>
  - <code>a['::2']</code>
- 
+ > [!IMPORTANT]  
+ > For the above mentioned reasons a "normal" array key accessor *MUST NOT* contain <var>colon</var>s (':')

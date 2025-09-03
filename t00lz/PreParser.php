@@ -40,7 +40,7 @@ class PreParser
 
     public function parse(string $file) 
     {
-        return  zephir_parse_file(file_get_contents($file), '(eval code)');
+        return  zephir_parse_file(file_get_contents($file), $file);
     }
     
     public function getMsg(array $ret, string $file): string

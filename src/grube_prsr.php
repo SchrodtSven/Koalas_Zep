@@ -9,12 +9,24 @@ use Koalas\Source\Zephir\ZepTkn;
 use Koalas\Source\Php\Fltr;
 use Koalas\Type\Op\Filter;
 
+
+
+// var_dump(get_extension_funcs("zephir_parser"));
+
+// die;
 Filter::BT;
 //$parser = new Prsr(file_get_contents('gen_tst_prse.php'));
-$parser = new Prsr(file_get_contents('cls.php'));
+$parser = new Prsr(file_get_contents('ex_src/for.php'));
 $parser->sanitzeVars();
 $foo = $parser->getLst();
 echo $foo;
+echo $foo->toCode();
+
+
+
+
+
+die;
 //print(implode('', $foo->toArray()));
 $p = $parser->find([\T_PUBLIC, \T_PROTECTED, \T_PRIVATE]);
 var_dump([$p, 'T_PROTECTED', 0]);

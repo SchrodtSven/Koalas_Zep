@@ -24,3 +24,6 @@ sep:separator
 slc:slice
 snp:snippet
 wlk:walk
+ex:example
+src:source
+dstr:data structure

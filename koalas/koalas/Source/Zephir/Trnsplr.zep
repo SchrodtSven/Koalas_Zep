@@ -37,8 +37,12 @@ class Trnsplr
         if !file_exists(fnm) {
             throw new \InvalidArgumentException(sprintf("File not found: %s", fnm));
         }
-        return new self(file_get_contents(fnm));
+        return new self(new Prsr(file_get_contents(fnm)));
     }
 
+    public static function fromStr(string code) -> <Trnsplr>
+    {
+        return new self(new Prsr(code));
+    }
 
 }

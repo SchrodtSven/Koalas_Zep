@@ -139,9 +139,9 @@ class TknLst extends SplDoublyLinkedList
         return tmp;
     }
 
-    // public function toCode() -> string
-    // {
-    //     return implode("", this->toArray());
-    // }
+    public function toCode() -> string
+    {
+        return implode("", this->toArray());
+    }
 
 }

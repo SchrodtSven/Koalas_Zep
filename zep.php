@@ -1,7 +1,7 @@
 #!/usr/bin/env php
 <?php
 require_once 't00lz/color.php';
-require_once 't00lz/ze_parse.php';
+require_once 't00lz/PreParser.php';
 
 
 
@@ -12,7 +12,8 @@ require_once 't00lz/ze_parse.php';
 // exit();
 
 $file = [
-    'koalas/koalas/Core/Dataframe.zep',
+    'koalas/koalas/Type/Dataframe.zep',
+    'koalas/koalas/Core/Dstr.zep',
     'koalas/koalas/Core/Kql/Ast.zep',
     'koalas/koalas/Core/Kql/Entity/Lst.zep',
     'koalas/koalas/Core/Kql/Entity/Num.zep',
