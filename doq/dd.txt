@@ -8,12 +8,15 @@ crt:criterion
 crtz:criteria
 curr:current
 dct:dict(ionary)
+dstr:data structure
 dta:data
 enc:enclosure
 esc:escape
+ex:example
 fltr:filter
 fnm:filename
 frm:from
+intl:internal
 kql:Koalas Query Language
 len:length
 lst:list
@@ -23,7 +26,7 @@ prsr:parser
 sep:separator
 slc:slice
 snp:snippet
-wlk:walk
-ex:example
 src:source
-dstr:data structure
+stp:step
+wlk:walk
+

@@ -16,7 +16,7 @@
 During the main developing phase of this project, we will use magic interceptors (that may disappear l8er; or *not*).
 
 
-## Indexing, Slicing
+## Indexing, slicing accessors
 
 Ok, we can *not* access (<kbd>ArrayAccess</kbd> implementing types) the snaky way via12 
  - <code>a[1:2]</code>

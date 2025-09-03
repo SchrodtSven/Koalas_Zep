@@ -12,6 +12,8 @@
  */
 
 namespace Koalas\Core;
+use Koalas\Core\Intl\IdxSlc;
+
 interface Dstr
 {
     public function readCsv(string fnm);
@@ -22,7 +24,5 @@ interface Dstr
 
     public function toJson(string fnm);
 
-    public function loc(array slcIdx);
-
-    public function iloc(array slcIdx);
+    
 }

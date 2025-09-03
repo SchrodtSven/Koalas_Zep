@@ -12,14 +12,22 @@
  */
 namespace Koalas\Type;
 use Koalas\Core\Dstr;
+use Koalas\Core\Intl\IdxSlc;
 
 class Dataframe implements \Stringable, Dstr
 {
   
 
+
+    public loc; // <IdxSlc>
+
+    public iloc; // <IdxSlc>
+
     public function __toString() -> string
     {
         return "Dataframe";
+
+        
     }
 
     public function readCsv(string $fnm)
@@ -34,9 +42,5 @@ class Dataframe implements \Stringable, Dstr
     public function toJson(string $fnm)
     {}
 
-    public function loc(array slcIdx)
-    {}
 
-    public function iloc(array slcIdx)
-    {}
 }

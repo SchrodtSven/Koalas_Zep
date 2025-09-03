@@ -12,26 +12,38 @@ namespace Koalas\Type;
 use Koalas\Type;
 
 
-class Arr implements \Countable, \ArrayAccess
+class Arr implements \Countable, \ArrayAccess, \Iterator
 {
     const ERR_404 = "File not found -> %s";
 
     protected dta = [];
+
+    protected pos = 0;
 
     public function __construct(dta = [])
     {
         let this->dta = dta;
     }
 
-    public function slice (int offset, int length = null, bool preserve_keys = false) -> array
+    public function slice (int offs, int len = null, int stp = 1, bool prsKeys = false) -> array
     {
-        return array_slice(this->dta, offset, length, preserve_keys);
+        var tmp = [];
+        if stp == 1 {
+            let tmp = array_slice(this->dta, offs, len, prsKeys);
+        } else {
+            int i = 0;
+            int last = offs+len;
+            for i in range(offs, last) {
+                let tmp[] = this->dta[i];
+            }
+        }
+        return tmp;
     }
 
     // alias for slice
-    public function rows (int offset, int length = null, bool preserve_keys = false) -> array
+    public function rows (int offs, int len = null, bool prsKeys = false) -> array
     {
-        return array_slice(this->dta, offset, length, preserve_keys);
+        return this->slice(offs, len, prsKeys);
     }
 
     public function cols(string col) -> array
@@ -78,28 +90,28 @@ class Arr implements \Countable, \ArrayAccess
 
     // Implementing \ArrayAccess 
 
-    public function offsetSet(offset, value) -> void 
+    public function offsetSet(offs, value) -> void 
     {
-        if (is_null(offset)) {
+        if (is_null(offs)) {
             let this->dta[] = value;
         } else {
-            let this->dta[offset] = value;
+            let this->dta[offs] = value;
         }
     }
 
-    public function offsetExists(offset) -> bool 
+    public function offsetExists(offs) -> bool 
     {
-        return isset(this->dta[offset]);
+        return isset(this->dta[offs]);
     }
 
-    public function offsetUnset(offset) -> void 
+    public function offsetUnset(offs) -> void 
     {
-        unset(this->dta[offset]);
+        unset(this->dta[offs]);
     }
 
-    public function offsetGet(offset) -> mixed 
+    public function offsetGet(offs) -> mixed 
     {
-        return isset(this->dta[offset]) ? this->dta[offset]  : null;
+        return isset(this->dta[offs]) ? this->dta[offs]  : null;
     }
 
     // Stack operations
@@ -145,5 +157,32 @@ class Arr implements \Countable, \ArrayAccess
     public function lastKey() -> string|int|null
     {
         return array_key_last($this->dta);
+    }
+
+    // Implementing \Iterator
+
+     public function rewind() -> void 
+     {
+        let this->pos = 0;
+    }
+
+    public function current() -> mixed
+    {
+        return this->dta[this->pos];
+    }
+
+    public function key() -> mixed
+    {
+        return this->pos;
+    }
+
+    public function next() -> void 
+    {
+        let this->pos ++;
+    }
+
+    public function valid() -> bool 
+    {
+        return isset(this->dta[this->pos]);
     }
 }
