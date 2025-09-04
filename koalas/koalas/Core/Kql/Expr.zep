@@ -32,7 +32,7 @@ class Expr
             let this->operator = operator; 
         }
         if (!in_array(count(operands), this->validOpCount)) {
-            throw new \InvalidArgumentException(self::ERR_PARM_CNT);
+            throw new \InvalidArgumentException(Expr::ERR_PARM_CNT);
         }
         if count(operands) {
             let this->operands = operands;

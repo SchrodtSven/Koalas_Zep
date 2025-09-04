@@ -1,10 +1,11 @@
 ; data dictionary -> used as lower(vars) | Ucfirst / CamelCased(Class names, methods)
-acc:accessor:Indexing/Slicing/Steppiong with array access operator "[]"
+acc:accessor:Indexing/Slicing/Stepping with array access operator "[]"
 adj:adjust
 anlze:analyze
 clj:closure
 cln:colon:':'
 cls:class
+cmt:comment
 cnt:content
 col:column
 colz:columns
@@ -20,20 +21,27 @@ ex:example
 fltr:filter
 fnm:filename
 frm:from
+ign:ignore
 intl:internal
 kql:Koalas Query Language
 len:length
 lst:list
+mgt:management
+mgr:manager
+mgrz:managers
+mta:meta:information about information
 offs:offset
 org:original
 prsr:parser
 prt:part
 prtz:parts
+rdr:reader
+rdrz:readers
 sep:separator
 slc:slice
 snp:snippet
 src:source
 stp:step
 strt:start
+vld:valid
 wlk:walk
-

@@ -1,0 +1,80 @@
+[
+    {
+        "id": 1,
+        "first_name": "Melicent",
+        "last_name": "Stud",
+        "email": "mstud0@tripadvisor.com",
+        "gender": "Female",
+        "country": "Albania",
+        "city": "Novoselë",
+        "status": null,
+        "currency": "Lek",
+        "credit_card": "3544699829301361",
+        "address": "Room 85"
+    },
+    {
+        "id": 2,
+        "first_name": "Karolina",
+        "last_name": "Francesch",
+        "email": "kfrancesch1@harvard.edu",
+        "gender": "Female",
+        "country": "China",
+        "city": "Gangshangji",
+        "status": null,
+        "currency": "Yuan Renminbi",
+        "credit_card": "5893103733524129",
+        "address": "4th Floor"
+    },
+    {
+        "id": 3,
+        "first_name": "Drud",
+        "last_name": "Mason",
+        "email": "dmason2@networkadvertising.org",
+        "gender": "Male",
+        "country": "Guinea",
+        "city": "Koundara",
+        "status": null,
+        "currency": "Franc",
+        "credit_card": "3548729208063302",
+        "address": "PO Box 85391"
+    },
+    {
+        "id": 4,
+        "first_name": "Aubrey",
+        "last_name": "Grinin",
+        "email": "agrinin3@godaddy.com",
+        "gender": "Female",
+        "country": "China",
+        "city": "Nanlang",
+        "status": null,
+        "currency": "Yuan Renminbi",
+        "credit_card": "3529763645409482",
+        "address": "10th Floor"
+    },
+    {
+        "id": 5,
+        "first_name": "Alair",
+        "last_name": "Vittle",
+        "email": "avittle4@wiley.com",
+        "gender": "Male",
+        "country": "China",
+        "city": "Xinfeng",
+        "status": null,
+        "currency": "Yuan Renminbi",
+        "credit_card": "3579191844450140",
+        "address": "PO Box 67244"
+    },
+    {
+        "id": 6,
+        "first_name": "Marcus",
+        "last_name": "Nurcombe",
+        "email": "mnurcombe5@ucla.edu",
+        "gender": "Non-binary",
+        "country": "Japan",
+        "city": "Kurayoshi",
+        "status": null,
+        "currency": "Yen",
+        "credit_card": "3583348121929964",
+        "address": "Room 1907"
+    }
+]

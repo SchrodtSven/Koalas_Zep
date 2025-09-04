@@ -16,13 +16,13 @@ use Koalas\Core\Intl\IdxSlc;
 
 interface Dstr
 {
-    public function readCsv(string fnm);
+    public function readCsv(string fnm) -> <Dstr>;
     
-    public function readJson(string fnm);
+    public function readJson(string fnm) -> <Dstr>;
 
-    public function toCsv(string fnm);
+    public function toCsv(string fnm) -> <Dstr>;
 
-    public function toJson(string fnm);
+    public function toJson(string fnm) -> <Dstr>;
 
     
 }

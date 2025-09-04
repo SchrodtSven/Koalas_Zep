@@ -20,7 +20,7 @@ class AccPrsr
     {
         var tmp = [], prts = [];
 
-        // @FIXME  if is_array(idxslc) return this->anlzeArr(idxslc)
+        
         if is_int(idxslc) {
             let tmp[] = idxslc; 
         } elseif is_numeric(idxslc) {
@@ -68,56 +68,4 @@ class AccPrsr
          return prtz;
     }
 
-    /**
-     * accessors (idxslcstp) be like 
-     * 
-     * - 'index/key' | 
-     * - 'strt:end:stp', OR opened:
-     * - '1:'
-     * - ':2'
-     * - '::2'
-     * - '1::2'
-     * 
-     * @param var idxslc
-     * @return array
-     */
-    public deprecated function analyse(var idxslcstp) -> array
-    {
-        if(is_int(idxslcstp)) {
-            return [idxslcstp];
-        }
-        
-        var tmp = [], parts = [], stp = 1, strt = 0, end = 0, last=strlen(idxslcstp);
-        let last --;
-
-        if(!strstr((string) idxslcstp, self::SLC_SEP)) {
-            if(is_numeric(idxslcstp)) {
-               let tmp = [(int) idxslcstp];
-            } else {
-                let tmp = [idxslcstp];
-            }
-        } else {
-            let parts =  explode(self::SLC_SEP, idxslcstp);
-            let stp = 1;
-            let strt = (int) parts[0];
-            let end = (int) parts[1];
-
-            if(strpos(idxslcstp, self::SLC_SEP) == 0 ) {
-                let tmp = [0,end];
-            } elseif(strpos(idxslcstp, self::SLC_SEP) != last) {
-                let tmp = [strt, end];
-            } else {
-                let tmp = [strt, null];
-            }
-
-            if(count(parts)>2) {
-                let stp = (int) parts[2];
-                let tmp = [strt, end, stp];
-            }
-        }
-
-        return tmp;
-    } 
-    
-  
 }

@@ -1,7 +1,7 @@
 /**
  * Zephir Tokens - extending \PhpToken
  * 
- * @TODO check id => text in self::sanitize()
+ * @TODO check id => text in ZepTkn::sanitize()
  * @author Sven Schrodt<sven@schrodt.nrw>
  * @link https://github.com/SchrodtSven/Koalas_Zep
  * @package 
@@ -18,11 +18,11 @@ class ZepTkn extends \PhPToken
 
     public function sanitize() -> void
     {
-        if(this->id < self::MIN_ID) {
+        if(this->id < ZepTkn::MIN_ID) {
             throw new \Exception(
-                sprintf(self::ERR_ID_BND, 
+                sprintf(ZepTkn::ERR_ID_BND, 
                         this->id, 
-                        self::MIN_ID));
+                        ZepTkn::MIN_ID));
         }
             
     }

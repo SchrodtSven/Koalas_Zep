@@ -17,7 +17,6 @@ class Bit
     private value = false;
 
     const C_TRUE = '1';
-
     const C_FALSE = '0';
 
     public function __construct(bool value = false)
@@ -34,7 +33,7 @@ class Bit
 
     public function __toString() -> string
     {
-        return (this->value) ? self::C_TRUE : self::C_FALSE;
+        return (this->value) ? Bit::C_TRUE : Bit::C_FALSE;
     }
 
     public function getCurrentValue() -> bool

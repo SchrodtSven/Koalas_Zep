@@ -18,16 +18,16 @@ class BitsTest extends TestCase
     {
         $fullByte= new Bits(255, 8);
 
-        $this->assertSame($fullByte->getCurrentValue(), 255);
+        $this->assertSame($fullByte->getCurrentVl(), 255);
         $this->assertSame((string) $fullByte, '11111111');
 
         $zero = new Bits(0, 8);
         $this->assertSame((string) $zero, '00000000');
-        $this->assertSame($zero->getCurrentValue(), 0);
+        $this->assertSame($zero->getCurrentVl(), 0);
 
         $kilo = new Bits(1024, 11);
         $this->assertSame((string) $kilo, '10000000000');
-        $this->assertSame($kilo->getCurrentValue(), 1024);
+        $this->assertSame($kilo->getCurrentVl(), 1024);
 
         
 

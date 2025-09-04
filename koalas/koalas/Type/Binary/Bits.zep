@@ -19,62 +19,63 @@ class Bits implements \Stringable
 
     protected msb;
 
-    protected length;
+    protected len;
 
-    protected minValue = 0;
+    protected minVl = 0;
 
-    protected maxValue;
+    protected maxVl;
 
-    protected currentValue;
+    protected currVl;
 
-    protected format;
+    protected frmt;
 
     const EXPONENT = 2;
 
 
-    const ERROR_BETWEEN_CONSTRAINT = 'value MUST be between %d and %d, when using bit length: %d, %d given';
+    const ERROR_BETWEEN_CONSTRAINT = 'value MUST be between %d and %d, when using bit len: %d, %d given';
 
-    public function __construct(int value, int length = 32)
+    public function __construct(int value, int len = 32)
     {
-        let this->msb = length - 1;
-        let this->length = length;
-        let this->maxValue = pow(self::EXPONENT, length) - 1;
-        let this->format = "%0" . this->length ."b";
-        this->setCurrentValue(value);
+        let this->msb = len - 1;
+        let this->len = len;
+        let this->maxVl = pow(Bits::EXPONENT, len) - 1;
+        let this->frmt = "%0" . this->len ."b";
+        this->setCurrentVl(value);
 
     }
 
-    public function getCurrentValue() -> int
+    public function getCurrentVl() -> int
     {
-        return this->currentValue;
+        return this->currVl;
     }
 
-    public function setCurrentValue(int value) -> <Bits>
+    public function setCurrentVl(int value) -> <Bits>
     {
-        if (value > this->maxValue || value < this->minValue) {
+        if (value > this->maxVl || value < this->minVl) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    self::ERROR_BETWEEN_CONSTRAINT,
-                    this->minValue,
-                    this->maxValue,
-                    this->length,
+                    Bits::ERROR_BETWEEN_CONSTRAINT,
+                    this->minVl,
+                    this->maxVl,
+                    this->len,
                     value
                 )
             );
         }
-        let this->currentValue = value;
+        let this->currVl = value;
         return this;
     }
 
 
     public function getBinaryLiteral() -> string
     {
-        return sprintf(this->format, this->currentValue);
+        return sprintf(this->frmt, this->currVl);
     }
 
 
     public function setBinaryLiteral(string literal) -> <Bits>
     {
+        //@FIXME sanitize
         let this->value = bindec(literal); 
         return this;
     }
@@ -87,78 +88,78 @@ class Bits implements \Stringable
     public function not() -> <Bits>
     {
         var tmp, parts, res;
-        let tmp = sprintf('%b', this->getCurrentValue());
+        let tmp = sprintf('%b', this->getCurrentVl());
         let parts = mb_str_split(tmp, 1);
         
         let res = array_map(parts, function (itm) {
             let itm = (itm == "1") ? "0" : "1";
             return itm;
         });
-        this->setCurrentValue(bindec(implode("", res)));
+        this->setCurrentVl(bindec(implode("", res)));
         return this;
     }
 
     public function doAnd(<Bits> operand) -> <Bits>
     {
-        return new self(this->currentValue & operand->currentValue);
+        return new self(this->currVl & operand->currVl);
     }
 
     public function doOr(<Bits> operand) -> <Bits>
     {
-        return new self(this->currentValue | operand->currentValue);
+        return new self(this->currVl | operand->currVl);
     }
 
     public function doXor(<Bits> operand) -> <Bits>
     {
-        return new self(this->currentValue ^ operand->currentValue);
+        return new self(this->currVl ^ operand->currVl);
     }
 
     
 
     /**
-     * Get the value of maxValue
+     * Get the value of maxVl
      *
      * @return int
      */
-    public function getMaxValue() -> int
+    public function getMaxVl() -> int
     {
-        return this->maxValue;
+        return this->maxVl;
     }
 
     /**
-     * Set the value of maxValue
+     * Set the value of maxVl
      *
-     * @param int maxValue
+     * @param int maxVl
      *
      * @return self
      */
-    public function setMaxValue(int maxValue) -> <Bits>
+    public function setMaxVl(int maxVl) -> <Bits>
     {
-        let this->maxValue = maxValue;
+        let this->maxVl = maxVl;
 
         return this;
     }
 
     /**
-     * Get the value of minValue
+     * Get the value of minVl
      *
      * @return int
      */
-    public function getMinValue() -> int
+    public function getMinVl() -> int
     {
-        return this->minValue;
+        return this->minVl;
     }
 
     /**
-     * Set the value of minValue
+     * Set the value of minVl
      *
-     * @param int minValue
+     * @param int minVl
      *
      * @return self
      */
-    public function setMinValue(int minValue) -> <Bits>
+    public function setMinVl(int minVl) -> <Bits>
     {
-        let this->minValue = minValue;
+        let this->minVl = minVl;
 
         return this;
     }
@@ -189,12 +190,12 @@ class Bits implements \Stringable
     }
 
     /**
-     * Get the value of length
+     * Get the value of len
      *
      * @return int
      */
     public function getLength() -> int
     {
-        return this->length;
+        return this->len;
     }
 }

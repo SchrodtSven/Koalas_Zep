@@ -13,6 +13,7 @@
 
 namespace Koalas\Core\Intl;
 use Koalas\Core\Intl\AccPrsr;
+use Koalas\Core\Dstr;
 
 class IdxSlc implements  \ArrayAccess 
 {
@@ -32,8 +33,15 @@ class IdxSlc implements  \ArrayAccess
 
     protected colz = [];
 
-    public function __construct()
+    protected isVSlc = false;  // flag for vertical slicing (“columns”)
+
+    protected isHSlc = false; // flag for horizonal slicing (“rows”)
+
+    protected dstr = null;
+
+    public function __construct(<Dstr> dstr = null)
     {
+        let this->dstr = dstr;
         let this->prsr = new AccPrsr();
     }
 
@@ -42,9 +50,9 @@ class IdxSlc implements  \ArrayAccess
         let this->acc = acc;
         this->prse();
         if (is_null(acc)) {
-            let this->dta[] = value;
+            this->dstr->set(null, value);
         } else {
-            let this->dta[acc] = value;
+            this->dstr->set(acc, value);
         }
     }
 
@@ -52,28 +60,39 @@ class IdxSlc implements  \ArrayAccess
     {
         let this->acc = acc;
         this->prse();
-        return isset(this->dta[acc]);
+        return isset(this->dstr->getDta()[acc]);
     }
 
     public function offsetUnset(acc) -> void 
     {
         let this->acc = acc;
         this->prse();
-        unset(this->dta[acc]);
+        unset(this->dstr->getDta()[acc]);
     }
 
     public function offsetGet(acc) -> mixed 
     {
         let this->acc = acc;
         this->prse();
-        return isset(this->dta[acc]) ? this->dta[acc]  : null;
+        
+        if this->isVSlc {
+            return this->dstr->slc(this->strt, this->end);
+        } else {
+            return isset(this->dstr->getDta()[acc]) ? this->dstr->getDta()[acc]  : null;
+        }
+
+       
+        
     }
 
     protected function prse()
-    {   if is_array(this->acc) {
+    {   
+        if is_array(this->acc) {
             let this->colz = this->acc;
+            let this->isHSlc = true;
             return true;
         }
+
         var prtz = this->prsr->anlze(this->acc);
         switch count(prtz) {
             
@@ -85,17 +104,19 @@ class IdxSlc implements  \ArrayAccess
             case 2:
                 let this->strt = prtz[0];
                 let this->end = prtz[1];
-                if  !is_null(this->end) {
-                    let this->end--;
-                }
+                let this->isVSlc = true;
+                // if  !is_null(this->end) {
+                //     let this->end--;
+                // }
                 break;
                 
             default: 
                 let this->strt = prtz[0];
                 let this->end = prtz[1]; 
-                if  !is_null(this->end) {
-                    let this->end--;
-                }
+                let this->isVSlc = true;
+                // if  !is_null(this->end) {
+                //     let this->end--;
+                // }
                 let this->stp = prtz[2];   
          }
 
@@ -105,7 +126,17 @@ class IdxSlc implements  \ArrayAccess
 
     public function __toString() -> string
     {
-        return implode("", this->dta);
+        return var_export(this, true);
+    }
+
+    public function getMta() -> array
+    {
+        return [
+            "start": this->strt,
+            "end": this->end,
+            "step": this->stp,
+            "columns": this->colz
+        ];
     }
 
 }

@@ -59,17 +59,17 @@ class Filter
     
     public function starts(value) -> <Filter>
     {
-        return this->generic(value, self::SW);
+        return this->generic(value, Filter::SW);
     }
 
      public function contains(value) -> <Filter>
     {
-        return this->generic(value, self::CT);
+        return this->generic(value, Filter::CT);
     }
 
     public function ends(value) -> <Filter>
     {
-        return this->generic(value, self::EW);
+        return this->generic(value, Filter::EW);
     }
 
 
@@ -82,37 +82,37 @@ class Filter
             let min = tmp;
         }
             
-        return this->generic([min, max], self::BT);
+        return this->generic([min, max], Filter::BT);
     }
 
     public function eq(value) -> <Filter>
     {
-        return this->generic(value, self::EQ);
+        return this->generic(value, Filter::EQ);
     }
 
     public function ne(value) -> <Filter>
     {
-        return this->generic(value, self::NE);
+        return this->generic(value, Filter::NE);
     }
 
     public function gt(value) -> <Filter>
     {
-        return this->generic(value, self::GT);
+        return this->generic(value, Filter::GT);
     }
 
     public function ge(value) -> <Filter>
     {
-        return this->generic(value, self::GE);
+        return this->generic(value, Filter::GE);
     }   
 
     public function lt(value) -> <Filter>
     {
-        return this->generic(value, self::LT);
+        return this->generic(value, Filter::LT);
     }
 
     public function le(value) -> <Filter>
     {
-        return this->generic(value, self::LE);
+        return this->generic(value, Filter::LE);
     }
 
     public function generic(value, string op) -> <Filter>
@@ -135,40 +135,40 @@ class Filter
     {
         switch (op) {
                  
-            case  self::EQ: 
+            case  Filter::EQ: 
                     return  realVal == expected;
 
-            case self::NE:
+            case Filter::NE:
                     return realVal != expected;
 
-            case  self::GT: 
+            case  Filter::GT: 
                     return  realVal > expected;
             
-            case  self::GE: 
+            case  Filter::GE: 
                     return  realVal >= expected;
 
-            case self::LT:
+            case Filter::LT:
                     return realVal < expected;
             
-            case self::LE:
+            case Filter::LE:
                     return realVal <= expected;
             
-            case self::SW:
+            case Filter::SW:
                     return str_starts_with(realVal, expected);
 
-            case self::CT:
+            case Filter::CT:
                     return str_contains(realVal, expected);        
             
-            case self::EW:
+            case Filter::EW:
                     return str_ends_with(realVal, expected);        
             
-            case self::BT:
+            case Filter::BT:
                     return (realVal <= expected[1] && realVal >= expected[0]);
 
-            case self::ISIN:
+            case Filter::ISIN:
                     return in_array(realVal, expected);
 
-            case self::NIN:
+            case Filter::NIN:
                     return !in_array(realVal, expected);
 
             default:

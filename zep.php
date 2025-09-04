@@ -42,6 +42,7 @@ $file = [
     'koalas/koalas/Source/Php/TknLst.zep',
     'koalas/koalas/Source/Php/Fltr.zep',
     'koalas/koalas/Stream/File/LnParser.zep',
+    'koalas/koalas/Stream/File/CsvManager.zep',
     'koalas/koalas/Type/Arr.zep',
     'koalas/koalas/Type/Binary/Bit.zep',
     'koalas/koalas/Type/Binary/Bits.zep',

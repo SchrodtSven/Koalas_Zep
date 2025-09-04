@@ -24,7 +24,7 @@ class TknLst extends SplDoublyLinkedList
     }
     
     /**
-     * Wrapper for self::add() with type hint
+     * Wrapper for self::push() with type hint
      *
      * @param \PhpToken token
      * @return void
@@ -115,8 +115,7 @@ class TknLst extends SplDoublyLinkedList
      */
     public function chkIdx(int idx) -> void
     {
-        var mxm;
-        let mxm = count(this);
+        int mxm = count(this);
         let mxm --;
         if (idx > mxm || idx < 0) {
             throw new \InvalidArgumentException(

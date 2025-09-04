@@ -1,6 +1,6 @@
 /**
  * Class for managing native arrays as instances
- * Just a playground for me on Zephir
+ * 
  * 
  * @author Sven Schrodt<sven@schrodt.nrw>
  * @link https://github.com/SchrodtSven/Koalas_Zep
@@ -76,7 +76,7 @@ class Arr implements \Countable, \ArrayAccess, \Iterator
     public static function fromJson(string file) -> <Arr>
     {
         if (!file_exists(file)) {
-             throw new \Exception(sprintf(self::ERR_404, file));
+             throw new \Exception(sprintf(Arr::ERR_404, file));
         } else {
             return new self(json_decode(file_get_contents(file), true));
         } 

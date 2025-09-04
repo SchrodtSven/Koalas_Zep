@@ -15,9 +15,7 @@ class LnParser
     const COM_SGN = ";";
     const ERR_404 = "File not found -> %s";
 
-    protected fileName = "" {
-        get, set
-    };
+    protected fnm = "";
 
     protected cnt = "";
 
@@ -31,9 +29,9 @@ class LnParser
 
     public function __construct(string fnm)
     {
-        let this->fileName = fnm;
+        let this->fnm = fnm;
         if !file_exists(fnm) {
-            throw new \InvalidArgumentException(sprintf(self::ERR_404, fnm));
+            throw new \InvalidArgumentException(sprintf(LnParser::ERR_404, fnm));
         }
         let this->cnt = file_get_contents(fnm);
         let this->lns = explode(PHP_EOL, this->cnt);
@@ -54,7 +52,7 @@ class LnParser
         var tmp, itm;
         let tmp = [];
         for itm in this->lns {
-            if(!str_starts_with(itm, self::COM_SGN)) {
+            if(!str_starts_with(itm, LnParser::COM_SGN)) {
                 let tmp[] = explode(sep, itm);
             }
                 
