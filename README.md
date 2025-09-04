@@ -11,8 +11,8 @@ Stuff to be re-written:
 > This is a WIP - far away from a stable state - everything may change.
 
 
-> [!IMPORTANT]  
-> NOTE2myself:: use return & parameter type hints everywhere --> IDE usage
+> [!NOTE]  
+> 2myself:: use return & parameter type hints everywhere --> IDE usage
 
  
 
