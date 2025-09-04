@@ -30,6 +30,8 @@ class IdxSlc implements  \ArrayAccess
 
     protected dta = [];
 
+    protected colz = [];
+
     public function __construct()
     {
         let this->prsr = new AccPrsr();
@@ -68,8 +70,36 @@ class IdxSlc implements  \ArrayAccess
     }
 
     protected function prse()
-    {
-        var_dump(this->prsr->analyse(this->acc));
+    {   if is_array(this->acc) {
+            let this->colz = this->acc;
+            return true;
+        }
+        var prtz = this->prsr->anlze(this->acc);
+        switch count(prtz) {
+            
+            case 1:
+                let this->strt = prtz[0];
+                let this->end = prtz[0];
+                break;
+
+            case 2:
+                let this->strt = prtz[0];
+                let this->end = prtz[1];
+                if  !is_null(this->end) {
+                    let this->end--;
+                }
+                break;
+                
+            default:
+                let this->strt = prtz[0];
+                let this->end = prtz[1]; 
+                if  !is_null(this->end) {
+                    let this->end--;
+                }
+                let this->stp = prtz[2];   
+         }
+
+         return true;
 
     }
 
