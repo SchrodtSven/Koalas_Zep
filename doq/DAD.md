@@ -1,16 +1,17 @@
 # DAD - Design& Architecture Dossier
+
  > [!NOTE]  
  > This Dossier is currently hyper-fluent; rather a collection of ideas than an official Design document
  
 
 ## Conventions
 
-1. We use short hand variable names (```dta, col, fn, clj, flr```) for (data, column, filename, closure, filter) etc., but 'speaking' class names 
+1. We use short hand variable names (```dta, col, fn, clj, flr```) for (data, column, filename, closure, filter) etc. read the list in [Data Dictionary](dd.txt)
 2. ```Namespace``` will be <kbd>Koalas\\*</kbd>
 
  <del>Classes wrapping funtionality for native PHP data types will be named like <code>StringClass</code> as in <code>stdClass</code>, but <i>ucfirst</i>-style
 Global function names borrowed from the snake, but also existing in <kbd>PHP</kbd>, will be prefixed by <code>k</code> as in kprint</del>
- <ins>Classes' `__toString()` interceptors have to be implemented</ins>
+ <ins>Classes' `__toString()` interceptors have to be implemented</ins> to represent their current states in string contexts.
 
 ## Way to go, while developing 
 
@@ -24,11 +25,11 @@ Ok, we can *not* access (<kbd>ArrayAccess</kbd> implementing types) the snaky wa
  - <code>a[3:]</code>
  - <code>a[:4]</code>
 
- directly, - so we are making a little tradeoff here, by slicing this way (accessors as `string`; resulting in short handed <kbd>*::slice(start,end,step)</kbd>):
+ directly, - so we are making a “little tradeoff“ here, by slicing this way (accessors as `string`; resulting in short handed <kbd>*::slice(start,end,step)</kbd>):
 
  - <code>a['1:2']</code>
  - <code>a['3:']</code>
  - <code>a[':4']</code>
  - <code>a['::2']</code>
  > [!IMPORTANT]  
- > For the above mentioned reasons a "normal" array key accessor *MUST NOT* contain <var>colon</var>s (`:`)
+ > For the reasons stated above a “normal“ array key accessor *MUST NOT* contain <var>colon</var>s (`:`).

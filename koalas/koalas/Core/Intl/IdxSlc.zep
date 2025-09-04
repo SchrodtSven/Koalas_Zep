@@ -90,7 +90,7 @@ class IdxSlc implements  \ArrayAccess
                 }
                 break;
                 
-            default:
+            default: 
                 let this->strt = prtz[0];
                 let this->end = prtz[1]; 
                 if  !is_null(this->end) {
