@@ -1,6 +1,6 @@
 # DAD - Design& Architecture Dossier
  > [!NOTE]  
- > This Dossier is very currently hyper-fluent; rather a collection of ideas than an official Design document
+ > This Dossier is currently hyper-fluent; rather a collection of ideas than an official Design document
  
 
 ## Conventions
