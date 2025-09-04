@@ -6,6 +6,7 @@ Stuff to be re-written:
 - [PhascolarctosCinereus](https://github.com/SchrodtSven/PhascolarctosCinereus)
 - [PhpLab](https://github.com/SchrodtSven/PhpLab)
 
+
 > [!CAUTION]  
 > This is a WIP - far away from a stable state - everything may change.
 
@@ -13,9 +14,7 @@ Stuff to be re-written:
 > [!IMPORTANT]  
 > NOTE2myself:: use return & parameter type hints everywhere --> IDE usage
 
-
-> [!NOTE]  
-> Currently there is not much to see here  - some kind of existing [Zephir code](https://github.com/SchrodtSven/Koalas_Zep/tree/main/koalas/koalas) may vanish ...
+ 
 
 > Zephir code can be found [here](https://github.com/SchrodtSven/Koalas_Zep/tree/main/koalas/koalas)
 
