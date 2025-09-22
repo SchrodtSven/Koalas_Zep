@@ -55,7 +55,7 @@
     },
     "namespace": "koalas",
     "name": "koalas",
-    "description": "Phascolarctos Cinereus: Not a snake, nor a panda and also not a bear!",
+    "description": "Phascolarctos Cinereus: Not a snake, nor a panda and also not a bear!\nData managing stuff",
     "author": "Sven Schrodt",
     "version": "0.0.3",
     "verbose": true,
