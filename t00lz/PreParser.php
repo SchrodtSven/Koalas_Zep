@@ -18,7 +18,7 @@ class PreParser
 {
     private bool $colorize = true;
 
-    private bool $stopOnError = true;
+    private bool $stopOnError = true; // whether to stop
 
     private int $errors = 0;
 

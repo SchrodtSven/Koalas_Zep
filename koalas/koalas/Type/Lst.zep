@@ -52,7 +52,7 @@ class Lst implements \Countable, \ArrayAccess, \Iterator
         return array_column(this->dta, col);
     }
 
-    public function walk(clj) -> <Arr>
+    public function walk(clj) -> <Lst>
     {
         array_walk(this->dta, clj);
         return this;
@@ -74,7 +74,7 @@ class Lst implements \Countable, \ArrayAccess, \Iterator
         return this->dta;
     }
 
-    public static function fromJson(string file) -> <Arr>
+    public static function fromJson(string file) -> <Lst>
     {
         if (!file_exists(file)) {
              throw new \Exception(sprintf(Arr::ERR_404, file));
@@ -117,7 +117,7 @@ class Lst implements \Countable, \ArrayAccess, \Iterator
 
     // Stack operations
 
-    public function push(mixed value) -> <Arr>
+    public function push(mixed value) -> <Lst>
     {
         array_push(this->dta, value);
         return this;
@@ -128,7 +128,7 @@ class Lst implements \Countable, \ArrayAccess, \Iterator
         return array_pop(this->dta);
     }
 
-    public function unshift(mixed value) -> <Arr>
+    public function unshift(mixed value) -> <Lst>
     {
         array_unshift(this->dta, value);
         return this;

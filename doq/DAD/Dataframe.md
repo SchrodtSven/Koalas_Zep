@@ -46,6 +46,24 @@ Optionally yo can <b>add</b> a $\color{Green}{\textsf{named index}}$
 Addionally a list of $\color{Green}{\textsf{column names}}$ is managed - eg: 
 
 ```php
+
 ['Month', 'Savings', 'Spendings']
+
+```
+
+##### Implementation
+
+```zephir
+    public loc; // <IdxSlc>
+    public iloc; // <IdxSlc>
+
+    
+    protected colz = []; // column names are stored here
+    protected col2idx [] // flipped array matching column names to index
+    protected dta = []; // container for actual data
+
+    protected idx = []; // named indices
+    protected dtp = []; // data type of columns
+    protected cp = []; // copy of data
 
 ```
