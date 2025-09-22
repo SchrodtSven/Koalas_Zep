@@ -16,11 +16,6 @@ A Dataframe consists of <var>columns</var> and <var>rows</var> like a table:
 
 Koalas <u>internally uses </u> a <var>list</var> (consecutive ```int``` <var>indices</var> starting with ```0```, stepped by ```++``` - named <var>rowNum</var>).
 
-<code style="color : pink">text</code>
-
-$${\color{red}Red}$$
-
-$\color{Blue}{\textsf{Normal, colored text}}$
 
 
 Each column is also indexed (consecutive ```int``` .. s.a.)
@@ -45,7 +40,7 @@ Optionally yo can <b>add</b> a $\color{Green}{\textsf{named index}}$
 
 
 
-Addionally a list of named columns is managed - eg: 
+Addionally a list of $\color{Green}{\textsf{column names}}$ is managed - eg: 
 
 ```php
 ['Month', 'Savings', 'Spendings']
