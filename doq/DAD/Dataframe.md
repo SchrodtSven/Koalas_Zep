@@ -4,13 +4,16 @@
 
 ### Dataframe 
 
-A Dataframe consists of <var>columns</var> and <var>rows</var> like a table:
+A Dataframe consists of $\color{Darkgray}{\textsf{columns}}$ and $\color{Blue}{\textsf{rows}}$ like a table:
 
 | Month    | Savings | Spendings |
 | -------- | ------- |-----------
 | January  | $250    | $250      |
 | February | $80     | $250      |
 | March    | $420    | $250      |
+
+
+A row can contain several data types - each column **MUST** contain data of the same/compatible type
 
 #### Internals
 

@@ -35,3 +35,8 @@ Ok, we can *not* access (<kbd>ArrayAccess</kbd> implementing types) the snaky wa
  - <code>a['::2']</code>
  > [!IMPORTANT]  
  > For the reasons stated above a “normal“ array key accessor *MUST NOT* contain <var>colon</var>s (`:`).
+
+ ### Data structures
+
+
+- [Dataframe](Dataframe.md)
