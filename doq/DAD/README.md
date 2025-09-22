@@ -1,4 +1,6 @@
-# DAD - Design& Architecture Dossier
+#  Phascolarctos Cinereus - Koalas 
+
+## DAD - Design& Architecture Dossier
 
  > [!NOTE]  
  > This Dossier is currently hyper-fluent; rather a collection of ideas than an official Design document
