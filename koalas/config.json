@@ -55,9 +55,9 @@
     },
     "namespace": "koalas",
     "name": "koalas",
-    "description": "Collection of data managing stuff in Zephir",
+    "description": "Phascolarctos Cinereus: Not a snake, nor a panda and also not a bear!",
     "author": "Sven Schrodt",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "verbose": true,
     "info": [
         {

@@ -4,7 +4,7 @@
  * @author Sven Schrodt<sven@schrodt.nrw>
  * @link https://github.com/SchrodtSven/Koalas_Zep
  * @package 
- * @version 0.0.2
+ * @version 0.0.3
  * @since 2025-08-25
  */
 namespace Koalas\Source\Generic;
@@ -40,6 +40,6 @@ class Builder
                         ;
         }
 
-        return (string) val;
+        return (string) val; //uneeded use of type cast? 20250922
     }
 }

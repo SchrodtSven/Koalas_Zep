@@ -2,7 +2,7 @@
 <?php
 
 /**
- * Parser class - to be used before zend build
+ * Parser class - to be used before Zephir build
  * 
  * 
  * @TODO 

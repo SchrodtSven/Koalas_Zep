@@ -7,7 +7,7 @@ declare(strict_types=1);
  * @author Sven Schrodt<sven@schrodt.nrw>
  * @link https://github.com/SchrodtSven/Koalas_Zep
  * @package Koalas_Zep
- * @version 0.0.2
+ * @version 0.0.3
  * @since 2025-09-04
  */
 

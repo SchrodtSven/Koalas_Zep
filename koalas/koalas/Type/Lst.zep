@@ -1,18 +1,18 @@
 /**
- * Class for managing native arrays as instances
+ * Class for managing lists as instances
  * 
  * 
  * @author Sven Schrodt<sven@schrodt.nrw>
  * @link https://github.com/SchrodtSven/Koalas_Zep
  * @package 
  * @version 0.0.3
- * @since 2025-08-20
+ * @since 2025-09-22
  */
 namespace Koalas\Type;
 use Koalas\Type;
 
 
-class Arr implements \Countable, \ArrayAccess, \Iterator
+class Lst implements \Countable, \ArrayAccess, \Iterator
 {
     const ERR_404 = "File not found -> %s";
 
@@ -25,8 +25,9 @@ class Arr implements \Countable, \ArrayAccess, \Iterator
         let this->dta = dta;
     }
 
-    public function slice (int offs, int len = null, int stp = 1, bool prsKeys = false) -> array
+    public function slice (int offs, int len = null, int stp = 1) -> array
     {
+        bool prsKeys = false;
         var tmp = [];
         if stp == 1 {
             let tmp = array_slice(this->dta, offs, len, prsKeys);
