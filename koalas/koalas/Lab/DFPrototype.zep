@@ -10,16 +10,17 @@
  */
 namespace Koalas\Lab;
  
+use Koalas\Type\Lst;
 
 
-class DFPrototype
+class DFPrototype extends Lst
 {
     public loc; // <IdxSlc>
     public iloc; // <IdxSlc>
 
     
     protected colz = []; // column names are stored here
-    protected col2idx [] // flipped array matching column names to index
+    protected col2idx = []; // flipped array matching column names to index
     protected dta = []; // container for actual data
 
     protected idx = []; // named indices
