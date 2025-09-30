@@ -11,7 +11,7 @@
 namespace Koalas\Lab;
  
 use Koalas\Type\Lst;
-
+use Koalas\Core\Intl\IdxSlc;
 
 class DFPrototype extends Lst
 {
@@ -26,6 +26,17 @@ class DFPrototype extends Lst
     protected idx = []; // named indices
     protected dtp = []; // data type of columns
     protected cp = []; // copy of data
+
+
+    public function __construct(array dta = [])
+    {
+        let this->loc = new IdxSlc();
+        let this->iloc = new IdxSlc(); // SHOULD be deprecated ??
+        let this->dta = dta;
+        if count(dta) {
+            this->anlze();
+        }
+    }
 
     /**
      *

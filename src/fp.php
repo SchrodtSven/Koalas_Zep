@@ -7,3 +7,6 @@ $fn = 'doq/dd.txt';
 $prsr = new LnParser($fn);
 $prsr->parse();
 var_dump($prsr->getPrePrse());
+
+
+var_dump(\DateTime::createFromTimestamp(9707725226321));

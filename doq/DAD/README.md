@@ -36,7 +36,15 @@ Ok, we can *not* access (<kbd>ArrayAccess</kbd> implementing types) the snaky wa
  > [!IMPORTANT]  
  > For the reasons stated above a “normal“ array key accessor *MUST NOT* contain <var>colon</var>s (`:`).
 
- ### Data structures
+### Ideas
+
+Combined col/row slicing
+
+```php
+    $dta[['id', 'name']]['2:8']
+```
+
+### Data structures
 
 
 - [Dataframe](Dataframe.md)

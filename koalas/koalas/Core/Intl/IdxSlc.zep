@@ -3,7 +3,8 @@
  *
  * - Dataframe
  * - Series
- * 
+ * - Classes implementing \Koalas\Core\Dstr
+ *
  * @author Sven Schrodt<sven@schrodt.nrw>
  * @link https://github.com/SchrodtSven/Koalas_Zep
  * @package 
@@ -19,25 +20,25 @@ class IdxSlc implements  \ArrayAccess
 {
       // Implementing \ArrayAccess 
 
-    protected strt = 0;
+    protected strt = 0; // start index
 
-    protected end = 0;
+    protected end = 0; // end index
 
-    protected stp = 1; 
+    protected stp = 1; // to be stepped by
 
-    protected acc = "";
+    protected acc = ""; // accessor literal 
 
-    protected prsr;
+    protected prsr; // instance of  \Koalas\Core\Intl\AccPrsr
 
-    protected dta = [];
+    protected dta = []; // pure data [rows][colz] as list of lists
 
-    protected colz = [];
+    protected colz = []; // column names
 
     protected isVSlc = false;  // flag for vertical slicing (“columns”)
 
     protected isHSlc = false; // flag for horizonal slicing (“rows”)
 
-    protected dstr = null;
+    protected dstr = null; // Data structure
 
     public function __construct(<Dstr> dstr = null)
     {
