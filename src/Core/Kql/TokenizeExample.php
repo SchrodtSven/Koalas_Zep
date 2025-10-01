@@ -7,7 +7,7 @@ declare(strict_types=1);
  * @author Sven Schrodt<sven@schrodt.nrw>
  * @link https://github.com/SchrodtSven/Koalas_Zep
  * @package PhpLab
- * @version 0.0.3
+ * @version 0.0.4
  * @since 2025-08-28
  */
 

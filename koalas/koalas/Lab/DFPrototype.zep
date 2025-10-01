@@ -5,7 +5,7 @@
  * @author Sven Schrodt<sven@schrodt.nrw>
  * @link https://github.com/SchrodtSven/Koalas_Zep
  * @package 
- * @version 0.0.3
+ * @version 0.0.4
  * @since 2025-09-22
  */
 namespace Koalas\Lab;
@@ -15,6 +15,7 @@ use Koalas\Core\Intl\IdxSlc;
 
 class DFPrototype extends Lst
 {
+    // public members for direct access as object property
     public loc; // <IdxSlc>
     public iloc; // <IdxSlc>
 
@@ -34,7 +35,7 @@ class DFPrototype extends Lst
         let this->iloc = new IdxSlc(); // SHOULD be deprecated ??
         let this->dta = dta;
         if count(dta) {
-            this->anlze();
+            this->anlze(dta);
         }
     }
 
@@ -55,7 +56,6 @@ class DFPrototype extends Lst
     {
         //@TODO analyze given data structure:
         // - dimensions?
-        // public bcz to be used be4 construction
 
     }
 }

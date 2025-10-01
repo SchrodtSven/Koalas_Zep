@@ -4,7 +4,7 @@
  * @author Sven Schrodt<sven@schrodt.nrw>
  * @link https://github.com/SchrodtSven/Koalas_Zep
  * @package PhpLab
- * @version 0.0.3
+ * @version 0.0.4
  * @since 2025-08-21
  */
 
@@ -14,13 +14,11 @@ namespace Koalas\Type\Op;
 
 class Filter
 {
-    protected criterion = "" {
-        set, get
-    };
+    protected criterion = "";
+
     protected dta = [];
-    protected origin = [] {
-        get
-    };
+    
+    protected origin = [];
 
    const EQ = "=="; // equals
    const NE = "!="; // not equals

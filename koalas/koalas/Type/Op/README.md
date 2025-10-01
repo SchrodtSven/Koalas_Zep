@@ -1,6 +1,6 @@
 # Koalas\Type\Op
 
-Filtering arrays
+Applying operations on traversable data structures (arrays/lists etc.)
 
 ### Examples
 ```zephir
