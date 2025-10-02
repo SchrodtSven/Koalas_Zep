@@ -12,6 +12,7 @@ require_once 't00lz/PreParser.php';
 // exit();
 
 $file = [
+    'koalas/koalas/Scktz/TcpServer.zep',
     'koalas/koalas/Lab/DFPrototype.zep',
     'koalas/koalas/Type/Lst.zep',
     'koalas/koalas/Type/Dataframe.zep',

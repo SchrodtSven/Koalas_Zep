@@ -10,11 +10,11 @@ use Koalas\Source\Php\Fltr;
 use Koalas\Type\Op\Filter;
 
 
-
-// var_dump(get_extension_funcs("zephir_parser"));
+// get_extension_funcs("koalas")
+// var_dump(get_loaded_extensions());
 
 // die;
-Filter::BT;
+// Filter::BT;
 //$parser = new Prsr(file_get_contents('gen_tst_prse.php'));
 $parser = new Prsr(file_get_contents('ex_src/for.php'));
 $parser->sanitzeVars();
