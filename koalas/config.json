@@ -3,9 +3,9 @@
     "api": {
         "path": "doc\/%version%",
         "theme": {
-            "name": "zephir",
+            "name": "Koalas_Zep",
             "options": {
-                "github": null,
+                "github": "https://github.com/SchrodtSven/Koalas_Zep",
                 "analytics": null,
                 "main_color": "#3E6496",
                 "link_color": "#3E6496",
@@ -57,7 +57,7 @@
     "name": "koalas",
     "description": "Phascolarctos Cinereus: Not a snake, nor a panda and also not a bear - data managing stuff!",
     "author": "Sven Schrodt",
-    "version": "0.0.4",
+    "version": "0.0.4 alpha",
     "verbose": true,
     "info": [
         {

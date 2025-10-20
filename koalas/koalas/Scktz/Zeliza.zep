@@ -1,5 +1,5 @@
 /**
- * Very simple TCP based server class 
+ * Very simple Eliza chat emulation
  * 
  * 
  * @since 2025-10-02
@@ -8,19 +8,19 @@
 
 namespace Koalas\Scktz;
 
-class TcpServer
+class Zeliza extends TcpServer
 {
 
-    protected name = "ZebServer";
+    protected name = "Zeliza";
     protected version = "0.0.1";
-    protected wlcMsg = "\nWelcome to the %s version %s Test Server. \n To quit, type 'quit'. To shut down the server type 'shutdown'\n";
+    protected wlcMsg = "\nWelcome to %s version %s Test Server. \n To quit, type 'quit'.\n";
     protected sck;
 
     protected backlog = 5; // Maximum of queued requests
-    protected address = "0.0.0.0"; // listening to 'all' by default
-    protected port = 10000;
+    protected address = "0.0.0.0";
+    protected port = 9999;
 
-    public function __construct(string address = "0.0.0.0", int port = 10000)
+    public function __construct(string address = "0.0.0.0", int port = 9999)
     {
         let this->address = address;
         let this->port = port;
@@ -28,31 +28,6 @@ class TcpServer
         this->run();
     }
 
-    protected function _init()
-    {
-        let this->sck = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
-        if this->sck == false {
-            this->throwMsg("create()", socket_strerror(socket_last_error()));
-        }
-
-        if (socket_bind(this->sck, this->address, this->port) === false) {
-
-            this->throwMsg("bind()", socket_strerror(socket_last_error(this->sck)));
-        }
-
-        if (socket_listen(this->sck, this->backlog) === false) {
-
-            this->throwMsg("listen()", socket_strerror(socket_last_error(this->sck)));
-        }
-    }
-
-
-
-
-    protected function throwMsg(string part, string reason)
-    {
-        throw new \Error(sprintf("socket_%s() failed! The reason: %s\n", part, reason));
-    }
 
     public function run()
     {
