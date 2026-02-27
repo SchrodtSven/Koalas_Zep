@@ -180,7 +180,6 @@ foreach ($action as $itm) {
         printf(
             $itm['answers'][array_rand($itm['answers'])],
             $found
-    
         );
         break;
     }

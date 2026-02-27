@@ -32,7 +32,7 @@ class DFPrototype extends Lst
     public function __construct(array dta = [])
     {
         let this->loc = new IdxSlc();
-        let this->iloc = new IdxSlc(); // SHOULD be deprecated ??
+        let this->iloc = new IdxSlc(); // SHOULD it be deprecated ??
         let this->dta = dta;
         if count(dta) {
             this->anlze(dta);
@@ -57,5 +57,10 @@ class DFPrototype extends Lst
         //@TODO analyze given data structure:
         // - dimensions?
 
+    }
+
+    public function query(string q) -> <DFPrototype>
+    {
+        return new self();
     }
 }
