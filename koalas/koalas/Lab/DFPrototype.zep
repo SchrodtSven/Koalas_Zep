@@ -35,7 +35,7 @@ class DFPrototype extends Lst
         let this->iloc = new IdxSlc(); // SHOULD it be deprecated ??
         let this->dta = dta;
         if count(dta) {
-            this->anlze(dta);
+            this->analyze(dta);
         }
     }
 
@@ -52,7 +52,7 @@ class DFPrototype extends Lst
         }
     }
 
-    public function anlze(array dta)
+    public function analyze(array dta)
     {
         //@TODO analyze given data structure:
         // - dimensions?

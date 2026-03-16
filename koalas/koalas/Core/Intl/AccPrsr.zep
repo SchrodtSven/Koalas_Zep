@@ -16,7 +16,7 @@ class AccPrsr
     const SLC_SEP = ':';
 
 
-    public  function anlze(var idxslc) -> array
+    public  function analyze(var idxslc) -> array
     {
         var tmp = [], prts = [];
 

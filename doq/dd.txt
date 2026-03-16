@@ -1,7 +1,7 @@
 ; data dictionary -> used as lower(vars) | Ucfirst / CamelCased(Class names, methods)
 acc:accessor:Indexing/Slicing/Stepping with array access operator "[]"
 adj:adjust
-anlze:analyze
+analyze:analyze
 clj:closure
 cln:colon:':'
 cls:class

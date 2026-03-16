@@ -94,7 +94,7 @@ class IdxSlc implements  \ArrayAccess
             return true;
         }
 
-        var prtz = this->prsr->anlze(this->acc);
+        var prtz = this->prsr->analyze(this->acc);
         switch count(prtz) {
             
             case 1:
