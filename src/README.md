@@ -8,13 +8,13 @@ The “throw away” namespace <kbd>SchrodtSven\Koalas</kbd> will be used here (
 - this namespace is fluid[^1] and will not be unit tested or checked, only <kbd>SchrodtSven\Koalas\Autoload</kbd> will be used in 
 <code>test/</code> and <code>check/</code>
 
--
--
--
--
--
--
--
+
+
+
+
+
+
+
 
 
 
